@@ -1,0 +1,137 @@
+[
+  {
+    "id": "vph-colposcopia-lesiones",
+    "categoria": "Cáncer cervicouterino",
+    "titulo": "Infección por VPH y el valor de la colposcopia",
+    "resumen_paciente": "El virus del papiloma humano (VPH) es la causa principal de las lesiones precancerosas del cuello uterino. Aunque muchas infecciones desaparecen solas, detectar a tiempo una infección persistente permite tratar lesiones antes de que avancen.",
+    "fuente_guia": "Basado en ESMO Essentials in Gynaecological Tumours (2024) y Atlas de Oncología Ginecológica (UNAM)",
+    "accion_sugerida": "Realiza tu tamizaje periódico y acude a colposcopia si tuviste un resultado alterado.",
+    "mensaje_whatsapp": "Hola Dra. Cynthia, me gustaría agendar una consulta de valoración por VPH o colposcopia en WTC CDMX."
+  },
+  {
+    "id": "mama-evaluacion-nodulo",
+    "categoria": "Patología mamaria",
+    "titulo": "¿Notaste un bulto o cambio en tu mama?",
+    "resumen_paciente": "La mayoría de los cambios mamarios son benignos, pero cualquier nódulo nuevo, hundimiento de la piel o secreción debe evaluarse con exploración clínica e imagen (mastografía o ultrasonido) y, si es necesario, biopsia.",
+    "fuente_guia": "Basado en Guías NCCN de Cáncer de Mama (v3.2025) y Clasificación OMS de Tumores de Mama",
+    "accion_sugerida": "No esperes a que desaparezca solo; solicita una valoración mamaria especializada.",
+    "mensaje_whatsapp": "Hola Dra. Cynthia, quisiera agendar una consulta de valoración mamaria en WTC CDMX."
+  },
+  {
+    "id": "endometrio-sangrado-posmenopausia",
+    "categoria": "Señales de alerta",
+    "titulo": "Sangrado después de la menopausia: señal clave",
+    "resumen_paciente": "Cualquier sangrado vaginal una vez que ya pasó la menopausia —aunque sea escaso o de un solo día— requiere revisión ginecológica oportuna. Evaluar el endometrio a tiempo permite diagnosticar causas benignas o tratar el cáncer en etapas iniciales.",
+    "fuente_guia": "Basado en Guías NCCN de Neoplasias Uterinas (2027) y ESMO (2024)",
+    "accion_sugerida": "Agenda una valoración ginecológica para estudio de sangrado uterino anormal.",
+    "mensaje_whatsapp": "Hola Dra. Cynthia, presento sangrado anormal y me gustaría agendar una consulta de valoración en WTC CDMX."
+  },
+  {
+    "id": "ovario-sintomas-persistentes",
+    "categoria": "Cáncer de ovario",
+    "titulo": "Síntomas abdominales que no debes ignorar",
+    "resumen_paciente": "El cáncer de ovario suele dar señales sutiles al inicio: inflamación abdominal persistente, llenura rápida al comer, dolor pélvico o necesidad frecuente de orinar. Cuando estos síntomas se mantienen por más de dos semanas, conviene estudiarlos.",
+    "fuente_guia": "Basado en Guías NCCN de Cáncer de Ovario (2027) y ESMO (2024)",
+    "accion_sugerida": "Solicita una evaluación pélvica y ultrasonido transvaginal si tienes síntomas persistentes.",
+    "mensaje_whatsapp": "Hola Dra. Cynthia, quisiera agendar una valoración ginecológica por síntomas pélvicos o abdominales persistentes."
+  },
+  {
+    "id": "riesgo-hereditario-brca",
+    "categoria": "Prevención y genética",
+    "titulo": "Antecedentes familiares de cáncer de mama u ovario",
+    "resumen_paciente": "Tener familiares cercanos con cáncer de mama, ovario, trompa o peritoneo puede indicar una predisposición hereditaria (como variantes en BRCA1 o BRCA2). Identificar tu riesgo permite diseñar un plan de vigilancia y prevención personalizado.",
+    "fuente_guia": "Basado en Guías NCCN de Cáncer de Ovario (2027) y Cáncer de Mama (2025)",
+    "accion_sugerida": "Comparte tu historial familiar en consulta para valorar asesoría genética y vigilancia estrecha.",
+    "mensaje_whatsapp": "Hola Dra. Cynthia, tengo antecedentes familiares de cáncer de mama u ovario y deseo una consulta de valoración de riesgo."
+  },
+  {
+    "id": "vulva-cambios-piel",
+    "categoria": "Salud vulvar",
+    "titulo": "Comezón persistente o cambios en la piel de la vulva",
+    "resumen_paciente": "El ardor crónico, manchas blanquecinas, zonas engrosadas o úlceras que no cicatrizan en la vulva no deben tratarse solo con cremas sin diagnóstico. Algunas afecciones como el liquen escleroso o lesiones por VPH requieren seguimiento y biopsia oportuna.",
+    "fuente_guia": "Basado en Guías NCCN de Cáncer de Vulva (2026) y ESMO (2024)",
+    "accion_sugerida": "Acude a revisión especializada ante cualquier lesión o molestia vulvar persistente.",
+    "mensaje_whatsapp": "Hola Dra. Cynthia, me gustaría agendar una consulta para valoración de síntomas o lesiones en la vulva."
+  },
+  {
+    "id": "mama-cirugia-oncoplastica",
+    "categoria": "Patología mamaria",
+    "titulo": "Cirugía conservadora y oncoplástica en mama",
+    "resumen_paciente": "Hoy en día, muchas pacientes con lesiones sospechosas o cáncer de mama en etapas tempranas son candidatas a cirugía conservadora con técnicas oncoplásticas, que priorizan la seguridad oncológica cuidando también la forma y simetría mamaria.",
+    "fuente_guia": "Basado en Guías NCCN de Cáncer de Mama (v3.2025)",
+    "accion_sugerida": "Solicita una segunda opinión o valoración quirúrgica especializada si ya tienes un diagnóstico.",
+    "mensaje_whatsapp": "Hola Dra. Cynthia, me gustaría agendar una consulta de valoración o segunda opinión en patología mamaria."
+  },
+  {
+    "id": "endometrio-sindrome-lynch",
+    "categoria": "Prevención y genética",
+    "titulo": "Síndrome de Lynch y prevención en cáncer de endometrio",
+    "resumen_paciente": "El síndrome de Lynch es la principal condición hereditaria asociada al cáncer de endometrio y colon. Conocer si existen antecedentes familiares de estos tumores ayuda a establecer estrategias de vigilancia temprana desde edades más jóvenes.",
+    "fuente_guia": "Basado en ESMO Essentials in Gynaecological Tumours (2024) y Guías NCCN Uterinas (2027)",
+    "accion_sugerida": "Revisa tus antecedentes familiares en consulta para evaluar si requieres seguimiento específico.",
+    "mensaje_whatsapp": "Hola Dra. Cynthia, quiero agendar una consulta para valorar riesgo hereditario de cáncer de endometrio."
+  },
+  {
+    "id": "cervix-papanicolaou-seguimiento",
+    "categoria": "Cáncer cervicouterino",
+    "titulo": "¿Qué hacer ante un Papanicolaou anormal?",
+    "resumen_paciente": "Un resultado alterado en la citología (Papanicolaou) no significa automáticamente cáncer; en la mayoría de los casos señala inflamación o lesiones premalignas tratables. Una colposcopia realizada por una especialista define con precisión el siguiente paso.",
+    "fuente_guia": "Basado en Atlas de Oncología Ginecológica (UNAM) y ESMO (2024)",
+    "accion_sugerida": "Lleva tus estudios previos a consulta para una interpretación clara y sin alarmas innecesarias.",
+    "mensaje_whatsapp": "Hola Dra. Cynthia, tuve un resultado alterado en mi Papanicolaou y quisiera agendar una consulta y colposcopia."
+  },
+  {
+    "id": "ovario-quiste-valoracion",
+    "categoria": "Cáncer de ovario",
+    "titulo": "Quistes ováricos: cuándo requieren valoración oncológica",
+    "resumen_paciente": "Muchos quistes en el ovario son funcionales y desaparecen solos, pero las masas complejas, persistentes o que aparecen después de la menopausia deben ser estudiadas por una ginecóloga oncóloga para elegir el abordaje más seguro.",
+    "fuente_guia": "Basado en Guías NCCN de Cáncer de Ovario (2027)",
+    "accion_sugerida": "Si te detectaron un quiste o masa anexial en un ultrasonido, agenda una valoración especializada.",
+    "mensaje_whatsapp": "Hola Dra. Cynthia, me detectaron un quiste en el ovario y me gustaría agendar una consulta de valoración."
+  },
+  {
+    "id": "vagina-tamizaje-tabaquismo",
+    "categoria": "Tracto genital inferior",
+    "titulo": "Cuidado del tracto genital inferior y factores modificables",
+    "resumen_paciente": "Las lesiones de vagina y cuello uterino comparten factores de riesgo como la infección persistente por VPH y el tabaquismo. Dejar de fumar y acudir a revisión ante sangrado tras las relaciones sexuales protege tu salud ginecológica.",
+    "fuente_guia": "Basado en Guías NCCN de Cáncer de Vagina (2027)",
+    "accion_sugerida": "Agenda tu chequeo ginecológico integral si presentas sangrado poscoital o flujo inusual.",
+    "mensaje_whatsapp": "Hola Dra. Cynthia, quisiera agendar una consulta de chequeo ginecológico integral en WTC CDMX."
+  },
+  {
+    "id": "mama-biopsia-clasificacion",
+    "categoria": "Patología mamaria",
+    "titulo": "¿Por qué es clave la biopsia antes de decidir un tratamiento?",
+    "resumen_paciente": "Conocer con exactitud el tipo histológico y molecular de una lesión mamaria mediante biopsia permite diseñar un plan a la medida, evitando cirugías innecesarias y seleccionando las terapias más efectivas para cada paciente.",
+    "fuente_guia": "Basado en Clasificación OMS de Tumores de Mama y Guías NCCN (v3.2025)",
+    "accion_sugerida": "Si tienes un reporte BI-RADS 4 o 5, solicita una valoración oportuna para definir el estudio ideal.",
+    "mensaje_whatsapp": "Hola Dra. Cynthia, tengo un estudio de mama (mastografía/ultrasonido) y deseo agendar una consulta de valoración."
+  },
+  {
+    "id": "endometrio-minima-invasion",
+    "categoria": "Cirugía especializada",
+    "titulo": "Cirugía de mínima invasión en ginecología oncológica",
+    "resumen_paciente": "En etapas tempranas de cáncer de endometrio y diversas patologías pélvicas, el abordaje laparoscópico ofrece la misma seguridad oncológica con incisiones pequeñas, menos dolor postoperatorio y una recuperación más rápida.",
+    "fuente_guia": "Basado en Guías NCCN de Neoplasias Uterinas (2027) y ESMO (2024)",
+    "accion_sugerida": "Consulta si tu caso es candidato a un procedimiento quirúrgico de mínima invasión.",
+    "mensaje_whatsapp": "Hola Dra. Cynthia, me gustaría agendar una consulta para valorar opciones de cirugía ginecológica de mínima invasión."
+  },
+  {
+    "id": "multidisciplinario-segunda-opinion",
+    "categoria": "Atención oncológica",
+    "titulo": "El valor de la atención por una ginecóloga oncóloga",
+    "resumen_paciente": "Las guías internacionales coinciden en que cuando existe sospecha o diagnóstico de un tumor ginecológico o mamario, la valoración inicial por una subespecialista en ginecología oncológica mejora la precisión del diagnóstico y los resultados del tratamiento.",
+    "fuente_guia": "Basado en Guías NCCN (2025–2027) y ESMO Essentials (2024)",
+    "accion_sugerida": "Agenda una valoración inicial o segunda opinión para resolver tus dudas con calma y claridad.",
+    "mensaje_whatsapp": "Hola Dra. Cynthia, me gustaría agendar una segunda opinión en ginecología oncológica en WTC CDMX."
+  },
+  {
+    "id": "chequeo-preventivo-etapas",
+    "categoria": "Prevención integral",
+    "titulo": "Chequeo ginecológico adaptado a cada etapa de tu vida",
+    "resumen_paciente": "Las necesidades preventivas cambian entre los 20, 40 y después de la menopausia. Combinar revisión clínica, tamizaje cervical, estudio mamario y cuidado del climaterio permite detectar alteraciones a tiempo y cuidar tu bienestar general.",
+    "fuente_guia": "Basado en ESMO Essentials (2024) y Atlas de Oncología Ginecológica (UNAM)",
+    "accion_sugerida": "Programa tu revisión anual preventiva en un entorno profesional y empático.",
+    "mensaje_whatsapp": "Hola Dra. Cynthia, me gustaría agendar mi chequeo ginecológico anual en WTC CDMX."
+  }
+]

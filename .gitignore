@@ -1,0 +1,16 @@
+# Carpetas locales con documentos personales y manuales médicos (NO subir a GitHub Pages)
+docs/
+manuales/
+
+# Archivos de sistema de macOS y Windows
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+desktop.ini
+
+# Archivos temporales y editores
+*.log
+*.tmp
+.vscode/
+.idea/
