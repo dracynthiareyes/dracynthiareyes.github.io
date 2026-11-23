@@ -62,3 +62,14 @@ Si en el futuro deseas habilitar un botón complementario con **Citas de Google 
 3. Escribe un resumen breve en el campo **Summary** (ej. `Actualización de tarjetas preventivas`) y haz clic en **Commit to main**.
 4. Haz clic en **Push origin** en la barra superior para subir los cambios a GitHub.
 5. *(Solo la primera vez)* En GitHub.com entra a **Settings → Pages**, selecciona **Deploy from a branch**, elige la rama `main` y carpeta `/ (root)`, y guarda. En 1 a 2 minutos el sitio quedará publicado y se actualizará automáticamente en cada `Push`.
+
+---
+
+## Pendientes posteriores a la publicación
+
+- [ ] **Google Business Profile (Google Maps):** Dar de alta y verificar el consultorio en WTC CDMX (Montecito 38, Piso 34, Consultorio 28) enlazando el sitio web y WhatsApp (`55 8006 5948`).
+- [ ] **Dominio propio:** Adquirir un dominio (ej. `dracynthiareyes.com` o `.mx`) y conectarlo a GitHub Pages (*Settings → Pages → Custom domain*).
+- [ ] **Google Search Console:** Registrar el sitio y enviar `sitemap.xml` para acelerar la indexación en Google.
+- [ ] **Google Calendar (opcional):** Pegar la URL de *Appointment Schedules* en `CONFIG.googleCalendarUrl` dentro de `js/app.js`.
+- [ ] **Aseguradoras (futuro):** Agregar bloque de seguros/reembolso cuando se defina.
+

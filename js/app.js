@@ -56,16 +56,16 @@ function crearTarjetaHtml(tarjeta) {
   );
 
   return `
-    <article class="group flex flex-col justify-between bg-white border border-slate-200/80 rounded-2xl p-6 shadow-sm hover:shadow-md hover:border-brand-200 transition-all duration-200">
+    <article class="group flex flex-col justify-between bg-white border border-slate-200/80 hover:border-clinical-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-200">
       <div>
         <div class="flex items-center justify-between gap-2 mb-4">
-          <span class="inline-flex items-center gap-1.5 text-xs font-medium text-brand-700 bg-brand-50 border border-brand-100 px-3 py-1 rounded-full">
-            <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+          <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-brand-700 bg-blush-100 border border-blush-200 px-3 py-1 rounded-full">
+            <i data-lucide="shield-check" class="w-3.5 h-3.5 text-brand-600"></i>
             ${escaparHtml(tarjeta.categoria)}
           </span>
         </div>
 
-        <h3 class="text-lg font-semibold text-slate-900 leading-snug mb-3 group-hover:text-brand-700 transition-colors duration-200">
+        <h3 class="font-display text-lg font-bold text-slate-900 leading-snug mb-3 group-hover:text-clinical-700 transition-colors duration-200">
           ${escaparHtml(tarjeta.titulo)}
         </h3>
 
@@ -73,9 +73,9 @@ function crearTarjetaHtml(tarjeta) {
           ${escaparHtml(tarjeta.resumen_paciente)}
         </p>
 
-        <div class="bg-surface border border-brand-100/60 rounded-xl p-3.5 mb-5">
+        <div class="bg-clinical-50/80 border border-clinical-100 rounded-xl p-3.5 mb-5">
           <p class="text-xs text-slate-700 leading-relaxed">
-            <span class="font-semibold text-slate-800">Recomendación:</span>
+            <span class="font-semibold text-clinical-800">Recomendación:</span>
             ${escaparHtml(tarjeta.accion_sugerida)}
           </p>
         </div>
@@ -83,7 +83,7 @@ function crearTarjetaHtml(tarjeta) {
 
       <div class="pt-4 border-t border-slate-100 space-y-3">
         <p class="text-[11px] text-slate-500 flex items-start gap-1.5 leading-snug">
-          <i data-lucide="book-open" class="w-3.5 h-3.5 text-slate-400 shrink-0 mt-0.5"></i>
+          <i data-lucide="book-open" class="w-3.5 h-3.5 text-clinical-600 shrink-0 mt-0.5"></i>
           <span>${escaparHtml(tarjeta.fuente_guia)}</span>
         </p>
 
@@ -91,7 +91,7 @@ function crearTarjetaHtml(tarjeta) {
           href="${urlWhatsapp}"
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center justify-center gap-2 w-full px-5 py-2.5 text-sm font-medium text-brand-700 bg-brand-50/80 hover:bg-brand-600 hover:text-white rounded-full transition-all duration-200"
+          class="inline-flex items-center justify-center gap-2 w-full px-5 py-2.5 text-sm font-medium text-clinical-700 bg-clinical-50 hover:bg-clinical-600 hover:text-white border border-clinical-200/70 rounded-full transition-all duration-200"
         >
           <i data-lucide="message-circle" class="w-4 h-4"></i>
           <span>Consultar sobre este tema</span>
@@ -251,6 +251,41 @@ function initAgendaOpcional() {
 }
 
 /**
+ * Formulario de valoración inicial en el Hero → WhatsApp estructurado.
+ */
+function initHeroBookingForm() {
+  const form = document.getElementById("hero-booking-form");
+  if (!form) return;
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const nombre = (document.getElementById("booking-name")?.value || "").trim();
+    const telefono = (document.getElementById("booking-phone")?.value || "").trim();
+    const modalidad = (document.getElementById("booking-modality")?.value || "").trim();
+    const motivo = (document.getElementById("booking-reason")?.value || "").trim();
+    const notas = (document.getElementById("booking-notes")?.value || "").trim();
+
+    if (!nombre || !telefono || !motivo) return;
+
+    const lineas = [
+      "Hola Dra. Cynthia, me gustaría agendar una consulta:",
+      `• Nombre: ${nombre}`,
+      `• Teléfono: ${telefono}`,
+      `• Modalidad: ${modalidad}`,
+      `• Motivo: ${motivo}`
+    ];
+
+    if (notas) {
+      lineas.push(`• Comentarios: ${notas}`);
+    }
+
+    const url = buildWhatsAppUrl(lineas.join("\n"));
+    window.open(url, "_blank", "noopener,noreferrer");
+  });
+}
+
+/**
  * Actualiza el año en el pie de página.
  */
 function initAnioActual() {
@@ -266,6 +301,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   initMenuMovil();
   initNavbarScroll();
+  initHeroBookingForm();
   initTarjetasPreventivas();
   initAgendaOpcional();
   initAnioActual();

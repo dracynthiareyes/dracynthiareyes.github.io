@@ -6,8 +6,33 @@
   <title>Dra. Cynthia Reyes López | Ginecología y Ginecología Oncológica · WTC CDMX</title>
   <meta
     name="description"
-    content="Consulta médica especializada en Ginecología, Obstetricia y Ginecología Oncológica en el World Trade Center Ciudad de México (Piso 34, Consultorio 28). Prevención, colposcopia, patología mamaria y cirugía de mínima invasión."
+    content="Consulta médica especializada en Ginecología, Obstetricia y Ginecología Oncológica en el World Trade Center Ciudad de México (Piso 34, Consultorio 28). Prevención, colposcopia, patología mamaria, cirugía de mínima invasión y consulta virtual."
   />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#C83E72" />
+  <link rel="canonical" href="https://dracynthiareyes.github.io/" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <!-- Open Graph / WhatsApp / Redes Sociales -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_MX" />
+  <meta property="og:site_name" content="Dra. Cynthia Reyes López" />
+  <meta property="og:url" content="https://dracynthiareyes.github.io/" />
+  <meta property="og:title" content="Dra. Cynthia Reyes López | Ginecología y Ginecología Oncológica · WTC CDMX" />
+  <meta
+    property="og:description"
+    content="Atención especializada en Ginecología, Obstetricia y Ginecología Oncológica en WTC Ciudad de México y consulta virtual. Certificada por CONACEM."
+  />
+  <meta property="og:image" content="https://dracynthiareyes.github.io/assets/387254.png" />
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Dra. Cynthia Reyes López | Ginecología y Ginecología Oncológica · WTC CDMX" />
+  <meta
+    name="twitter:description"
+    content="Consulta presencial en WTC CDMX (Piso 34, Consultorio 28) y videoconsulta. Colposcopia, patología mamaria y cirugía de mínima invasión."
+  />
+  <meta name="twitter:image" content="https://dracynthiareyes.github.io/assets/387254.png" />
 
   <!-- Tipografías Inter y Plus Jakarta Sans desde Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -28,17 +53,34 @@
             display: ["Plus Jakarta Sans", "Inter", "system-ui", "sans-serif"]
           },
           colors: {
-            surface: "#FAF7F9",
+            surface: "#FDF4F7",
+            blush: {
+              50: "#FFF5F8",
+              100: "#FCE8F0",
+              200: "#F8CFE0",
+              300: "#F1A7C5",
+              500: "#D94B7E"
+            },
             brand: {
-              50: "#FDF2F6",
-              100: "#FCE7EF",
-              200: "#F6C8D9",
-              300: "#EC9CB9",
-              500: "#BE3A6B",
-              600: "#931D4B",
-              700: "#75143A",
-              800: "#5B102E",
-              900: "#440B22"
+              50: "#FFF2F7",
+              100: "#FDE4EE",
+              200: "#FAC8DC",
+              300: "#F39DBE",
+              500: "#DC5588",
+              600: "#C83E72",
+              700: "#AD2E5E",
+              800: "#8F224B",
+              900: "#6B1737"
+            },
+            clinical: {
+              50: "#EFFAFC",
+              100: "#D7F3F7",
+              200: "#B0E6EE",
+              500: "#1499AB",
+              600: "#0E7C8B",
+              700: "#0B616E",
+              800: "#0B4B57",
+              900: "#0A3944"
             }
           }
         }
@@ -48,19 +90,122 @@
 
   <!-- Lucide Icons vía CDN -->
   <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Datos estructurados SEO (Schema.org: Physician + FAQPage) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Physician",
+          "name": "Dra. Cynthia Reyes López",
+          "url": "https://dracynthiareyes.github.io/",
+          "image": "https://dracynthiareyes.github.io/assets/387254.png",
+          "telephone": "+52-55-8006-5948",
+          "email": "cynthiareyeslopez@gmail.com",
+          "medicalSpecialty": [
+            "Gynecology",
+            "Obstetrics",
+            "Oncology"
+          ],
+          "description": "Médica especialista en Ginecología y Obstetricia con Subespecialidad en Ginecología Oncológica certificada por CONACEM. Consulta presencial en World Trade Center Ciudad de México y consulta virtual.",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Montecito 38, Piso 34, Consultorio 28, Col. Nápoles",
+            "addressLocality": "Ciudad de México",
+            "addressRegion": "CDMX",
+            "postalCode": "03810",
+            "addressCountry": "MX"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 19.3937,
+            "longitude": -99.1746
+          },
+          "areaServed": [
+            {
+              "@type": "AdministrativeArea",
+              "name": "Benito Juárez, Ciudad de México"
+            },
+            {
+              "@type": "City",
+              "name": "Ciudad de México"
+            }
+          ],
+          "knowsAbout": [
+            "Ginecología Oncológica",
+            "Patología Mamaria",
+            "Cirugía Oncoplástica de Mama",
+            "Colposcopia y VPH",
+            "Cirugía Laparoscópica de Mínima Invasión",
+            "Ginecología y Obstetricia"
+          ],
+          "sameAs": [
+            "https://www.instagram.com/dracynthiareyes?cnvx=MWNlMmpkeGxrcmJjaA==",
+            "https://orcid.org/0009-0008-4689-0578"
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "¿Qué debo llevar a mi primera consulta?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Es útil llevar tus estudios previos recientes (Papanicolaou, prueba de VPH, colposcopia, mastografía, ultrasonido o reportes de biopsia), una lista de medicamentos actuales y una identificación oficial vigente para el registro en planta baja del WTC."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿En qué casos conviene agendar una consulta virtual (videoconsulta)?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "La videoconsulta es ideal para interpretación de estudios de laboratorio o imagen, segundas opiniones en ginecología oncológica o patología mamaria, seguimiento clínico y orientación preventiva desde cualquier ciudad."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Cuándo es recomendable acudir con una ginecóloga oncóloga?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Conviene acudir ante un resultado alterado en Papanicolaou o VPH, nódulos o estudios sospechosos de mama, sangrado después de la menopausia, quistes ováricos complejos, antecedentes familiares de cáncer ginecológico o de mama, o para solicitar una segunda opinión."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Cómo se realiza una colposcopia y es dolorosa?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Es un procedimiento de consultorio rápido y bien tolerado, similar a la toma de un Papanicolaou. Permite observar el cuello uterino con aumento óptico para detectar a tiempo lesiones asociadas al VPH y definir si requieren seguimiento o tratamiento."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Cómo funciona el acceso y estacionamiento en el WTC Ciudad de México?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "El WTC cuenta con estacionamiento subterráneo con acceso por las calles Montecito y Dakota, y está a unos pasos de la estación Metrobús Poliforum (Línea 1). Para ingresar al Piso 34, Consultorio 28, solo necesitas presentar una identificación oficial vigente en el registro de planta baja."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  </script>
 </head>
 
 <body class="bg-white text-slate-800 font-sans antialiased selection:bg-brand-100 selection:text-brand-900">
-  <!-- Barra superior de contacto rápido -->
-  <div class="bg-brand-700 text-white/95 text-xs">
+  <!-- Barra superior de contacto rápido (Guinda con acentos agua/rosa pálido) -->
+  <div class="bg-brand-700 text-white/95 text-xs border-b border-brand-800/40">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-wrap items-center justify-between gap-2">
       <div class="flex items-center gap-4">
         <span class="inline-flex items-center gap-1.5">
-          <i data-lucide="map-pin" class="w-3.5 h-3.5 text-brand-200"></i>
+          <i data-lucide="map-pin" class="w-3.5 h-3.5 text-clinical-200"></i>
           <span>WTC CDMX · Piso 34, Consultorio 28</span>
         </span>
-        <span class="hidden sm:inline-flex items-center gap-1.5 text-white/85">
-          <i data-lucide="video" class="w-3.5 h-3.5 text-brand-200"></i>
+        <span class="hidden sm:inline-flex items-center gap-1.5 text-blush-100">
+          <i data-lucide="video" class="w-3.5 h-3.5 text-clinical-200"></i>
           <span>Consulta presencial y virtual</span>
         </span>
       </div>
@@ -69,18 +214,18 @@
           href="https://wa.me/525580065948?text=Hola%20Dra.%20Cynthia%2C%20me%20gustar%C3%ADa%20agendar%20una%20consulta."
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-1.5 hover:text-brand-200 transition-colors"
+          class="inline-flex items-center gap-1.5 hover:text-clinical-200 transition-colors"
         >
-          <i data-lucide="phone" class="w-3.5 h-3.5 text-brand-200"></i>
+          <i data-lucide="phone" class="w-3.5 h-3.5 text-clinical-200"></i>
           <span>55 8006 5948</span>
         </a>
         <a
           href="https://www.instagram.com/dracynthiareyes?cnvx=MWNlMmpkeGxrcmJjaA=="
           target="_blank"
           rel="noopener noreferrer"
-          class="hidden sm:inline-flex items-center gap-1.5 hover:text-brand-200 transition-colors"
+          class="hidden sm:inline-flex items-center gap-1.5 hover:text-blush-200 transition-colors"
         >
-          <i data-lucide="instagram" class="w-3.5 h-3.5 text-brand-200"></i>
+          <svg class="w-3.5 h-3.5 text-blush-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
           <span>@dracynthiareyes</span>
         </a>
       </div>
@@ -90,14 +235,14 @@
   <!-- Barra de navegación superior fija -->
   <header
     id="site-header"
-    class="sticky top-0 z-40 backdrop-blur-md bg-white/90 border-b border-brand-100/70 transition-all duration-200"
+    class="sticky top-0 z-40 backdrop-blur-md bg-white/95 border-b border-blush-200/70 transition-all duration-200"
   >
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16 sm:h-18">
         <!-- Marca / Nombre -->
         <a href="#inicio" class="flex items-center gap-3 group">
           <span
-            class="w-9 h-9 rounded-full bg-gradient-to-br from-brand-500 to-brand-700 text-white font-display font-semibold text-sm flex items-center justify-center shadow-sm group-hover:shadow transition-all duration-200"
+            class="w-9 h-9 rounded-full bg-gradient-to-br from-brand-600 to-clinical-600 text-white font-display font-semibold text-sm flex items-center justify-center shadow-sm group-hover:shadow transition-all duration-200"
             aria-hidden="true"
           >
             CR
@@ -106,7 +251,7 @@
             <span class="block font-display text-sm sm:text-base font-bold text-slate-900">
               Dra. Cynthia Reyes López
             </span>
-            <span class="block text-[11px] sm:text-xs text-slate-500">
+            <span class="block text-[11px] sm:text-xs font-medium text-clinical-700">
               Ginecología · Ginecología Oncológica
             </span>
           </div>
@@ -116,33 +261,39 @@
         <nav class="hidden md:flex items-center gap-7" aria-label="Navegación principal">
           <a
             href="#especialidades"
-            class="text-sm font-medium text-slate-600 hover:text-brand-700 transition-colors duration-200"
+            class="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors duration-200"
           >
             Especialidades
           </a>
           <a
             href="#prevencion"
-            class="text-sm font-medium text-slate-600 hover:text-brand-700 transition-colors duration-200"
+            class="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors duration-200"
           >
             Prevención
           </a>
           <a
             href="#ubicacion"
-            class="text-sm font-medium text-slate-600 hover:text-brand-700 transition-colors duration-200"
+            class="text-sm font-medium text-slate-600 hover:text-clinical-600 transition-colors duration-200"
           >
-            Ubicación
+            Ubicación WTC
           </a>
           <a
             href="#formacion"
-            class="text-sm font-medium text-slate-600 hover:text-brand-700 transition-colors duration-200"
+            class="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors duration-200"
           >
             Formación
+          </a>
+          <a
+            href="#faq"
+            class="text-sm font-medium text-slate-600 hover:text-clinical-600 transition-colors duration-200"
+          >
+            Preguntas
           </a>
           <a
             href="https://wa.me/525580065948?text=Hola%20Dra.%20Cynthia%2C%20me%20gustar%C3%ADa%20agendar%20una%20consulta%20en%20WTC%20CDMX."
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium text-white bg-brand-600 hover:bg-brand-700 rounded-full shadow-sm hover:shadow hover:-translate-y-0.5 transition-all duration-200"
+            class="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium text-white bg-clinical-600 hover:bg-clinical-700 rounded-full shadow-sm hover:shadow hover:-translate-y-0.5 transition-all duration-200"
           >
             <i data-lucide="calendar-check" class="w-4 h-4"></i>
             <span>Agendar cita</span>
@@ -198,6 +349,12 @@
         >
           Formación y credenciales
         </a>
+        <a
+          href="#faq"
+          class="px-3 py-2.5 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-clinical-700 transition-colors"
+        >
+          Preguntas frecuentes
+        </a>
         <div class="pt-2 mt-1 border-t border-slate-100">
           <a
             href="https://wa.me/525580065948?text=Hola%20Dra.%20Cynthia%2C%20me%20gustar%C3%ADa%20agendar%20una%20consulta%20en%20WTC%20CDMX."
@@ -214,53 +371,71 @@
   </header>
 
   <main>
-    <!-- 1. Hero Section -->
-    <section id="inicio" class="py-14 sm:py-18 lg:py-22 bg-gradient-to-br from-brand-50/70 via-white to-surface">
+    <!-- 1. Hero Section (Presentación + Formulario de valoración rápida vía WhatsApp) -->
+    <section id="inicio" class="py-12 sm:py-16 lg:py-18 bg-gradient-to-br from-blush-100/80 via-white to-clinical-50/70">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-          <!-- Texto principal -->
+        <div class="grid lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+          <!-- Columna izquierda: Perfil y fotografía -->
           <div class="lg:col-span-7 space-y-6">
-            <div class="inline-flex items-center gap-2 text-xs font-medium text-brand-700 bg-white/90 border border-brand-200/80 px-3.5 py-1.5 rounded-full shadow-sm">
-              <i data-lucide="badge-check" class="w-4 h-4 text-brand-600"></i>
-              <span>Certificada por CONACEM · WTC Ciudad de México</span>
+            <div class="inline-flex items-center gap-2 text-xs font-semibold text-clinical-700 bg-clinical-50 border border-clinical-200 px-3.5 py-1.5 rounded-full shadow-sm">
+              <i data-lucide="badge-check" class="w-4 h-4 text-clinical-600"></i>
+              <span>Certificada por CONACEM N.º 3236 · WTC Ciudad de México</span>
             </div>
 
-            <div class="space-y-3">
-              <h1 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight leading-tight">
-                Dra. Cynthia Reyes López
-              </h1>
-              <p class="text-base sm:text-lg font-semibold text-brand-600">
-                Ginecología y Obstetricia · Ginecología Oncológica
-              </p>
+            <!-- Cabecera con retrato profesional + nombre y especialidades -->
+            <div class="flex flex-col sm:flex-row sm:items-center gap-5">
+              <div class="relative shrink-0">
+                <div
+                  class="absolute -inset-1.5 rounded-3xl bg-gradient-to-tr from-blush-200/80 via-clinical-200/60 to-transparent blur-md pointer-events-none"
+                  aria-hidden="true"
+                ></div>
+                <img
+                  src="assets/387254.png"
+                  alt="Dra. Cynthia Reyes López, especialista en Ginecología, Obstetricia y Ginecología Oncológica"
+                  class="relative w-28 h-32 sm:w-32 sm:h-36 rounded-2xl object-cover object-top border-2 border-white shadow-md"
+                  loading="eager"
+                />
+              </div>
+
+              <div class="space-y-2.5">
+                <h1 class="font-display text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight leading-tight">
+                  Dra. Cynthia Reyes López
+                </h1>
+                <div class="flex flex-wrap items-center gap-2">
+                  <span class="inline-flex items-center px-3 py-1 rounded-full text-xs sm:text-sm font-semibold bg-blush-100 text-brand-700 border border-blush-200">
+                    Ginecología y Obstetricia
+                  </span>
+                  <span class="inline-flex items-center px-3 py-1 rounded-full text-xs sm:text-sm font-semibold bg-clinical-50 text-clinical-700 border border-clinical-200">
+                    Ginecología Oncológica
+                  </span>
+                </div>
+              </div>
             </div>
 
             <p class="text-base text-slate-600 leading-relaxed max-w-2xl">
               Atención ginecológica integral y subespecializada con enfoque en prevención, diagnóstico oportuno y tratamiento basado en evidencia. Evaluación de patología cervical y colposcopia, salud mamaria, cirugía oncoplástica y abordaje laparoscópico de mínima invasión, con acompañamiento claro y cercano en cada consulta.
             </p>
 
-            <!-- Botones de acción -->
-            <div class="flex flex-col sm:flex-row gap-3 pt-1">
-              <a
-                href="https://wa.me/525580065948?text=Hola%20Dra.%20Cynthia%2C%20me%20gustar%C3%ADa%20agendar%20una%20consulta%20en%20su%20consultorio%20de%20WTC%20CDMX."
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 text-sm sm:text-base font-medium text-white bg-gradient-to-r from-brand-600 to-brand-700 hover:from-brand-700 hover:to-brand-800 rounded-full shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
-              >
-                <i data-lucide="message-circle" class="w-5 h-5"></i>
-                <span>Agendar consulta</span>
-              </a>
-
+            <!-- Accesos rápidos -->
+            <div class="flex flex-wrap gap-3 pt-0.5">
               <a
                 href="#ubicacion"
-                class="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm sm:text-base font-medium text-brand-700 bg-white hover:bg-brand-50 border border-brand-200/80 rounded-full shadow-sm hover:-translate-y-0.5 transition-all duration-200"
+                class="inline-flex items-center justify-center gap-2 px-5 py-2.5 text-sm font-medium text-clinical-700 bg-white hover:bg-clinical-50 border border-clinical-200 rounded-full shadow-sm hover:-translate-y-0.5 transition-all duration-200"
               >
-                <i data-lucide="map-pin" class="w-4 h-4 text-brand-600"></i>
-                <span>Consultorio WTC CDMX</span>
+                <i data-lucide="map-pin" class="w-4 h-4 text-clinical-600"></i>
+                <span>Ver consultorio WTC</span>
+              </a>
+              <a
+                href="#especialidades"
+                class="inline-flex items-center justify-center gap-2 px-5 py-2.5 text-sm font-medium text-brand-700 bg-white hover:bg-blush-50 border border-blush-200 rounded-full shadow-sm hover:-translate-y-0.5 transition-all duration-200"
+              >
+                <i data-lucide="stethoscope" class="w-4 h-4 text-brand-600"></i>
+                <span>Conocer servicios</span>
               </a>
             </div>
 
             <!-- Credenciales rápidas -->
-            <div class="grid sm:grid-cols-3 gap-3 pt-5 border-t border-brand-100/80">
+            <div class="grid sm:grid-cols-3 gap-3 pt-5 border-t border-blush-200/70">
               <div class="flex items-start gap-2.5">
                 <i data-lucide="graduation-cap" class="w-4 h-4 text-brand-600 shrink-0 mt-0.5"></i>
                 <p class="text-xs text-slate-600 leading-snug">
@@ -269,7 +444,7 @@
                 </p>
               </div>
               <div class="flex items-start gap-2.5">
-                <i data-lucide="award" class="w-4 h-4 text-brand-600 shrink-0 mt-0.5"></i>
+                <i data-lucide="award" class="w-4 h-4 text-clinical-600 shrink-0 mt-0.5"></i>
                 <p class="text-xs text-slate-600 leading-snug">
                   <strong class="font-semibold text-slate-800 block">Maestría IPN</strong>
                   Ciencias de la Salud · Investigación en mama
@@ -285,33 +460,123 @@
             </div>
           </div>
 
-          <!-- Fotografía profesional -->
+          <!-- Columna derecha: Formulario de valoración inicial conectado a WhatsApp -->
           <div class="lg:col-span-5">
-            <div class="relative max-w-sm mx-auto">
-              <div
-                class="absolute -inset-3 rounded-3xl bg-gradient-to-tr from-brand-200/45 via-brand-100/30 to-transparent blur-xl pointer-events-none"
-                aria-hidden="true"
-              ></div>
-              <div class="relative rounded-3xl overflow-hidden border border-brand-100 bg-white shadow-md">
-                <img
-                  src="assets/387254.png"
-                  alt="Dra. Cynthia Reyes López, especialista en Ginecología, Obstetricia y Ginecología Oncológica"
-                  class="w-full aspect-[4/5] object-cover object-top"
-                  loading="eager"
-                />
-                <div class="absolute bottom-3 left-3 right-3 bg-white/90 backdrop-blur-md border border-brand-100/80 rounded-2xl px-4 py-2.5 flex items-center justify-between text-xs shadow-sm">
-                  <span class="font-medium text-slate-800">Certificado CONACEM N.º 3236</span>
-                  <span class="font-semibold text-brand-700">CDMX</span>
-                </div>
+            <div class="bg-white/95 backdrop-blur-md border border-brand-200/70 rounded-3xl p-6 sm:p-7 shadow-lg">
+              <div class="mb-5">
+                <span class="inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider text-brand-600 mb-1">
+                  <i data-lucide="calendar-heart" class="w-3.5 h-3.5"></i>
+                  Agenda tu valoración
+                </span>
+                <h2 class="font-display text-xl font-bold text-slate-900 leading-snug">
+                  Solicita tu consulta en 1 minuto
+                </h2>
+                <p class="text-xs text-slate-500 mt-1">
+                  Completa tus datos y te redirigiremos directo a WhatsApp con tu solicitud lista para confirmar horario.
+                </p>
               </div>
+
+              <form id="hero-booking-form" class="space-y-3.5">
+                <div class="grid sm:grid-cols-2 gap-3">
+                  <div>
+                    <label for="booking-name" class="block text-xs font-medium text-slate-700 mb-1">
+                      Nombre completo *
+                    </label>
+                    <input
+                      id="booking-name"
+                      name="nombre"
+                      type="text"
+                      required
+                      placeholder="Ej. María González"
+                      class="w-full px-3.5 py-2.5 text-sm text-slate-800 bg-slate-50/70 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-500/30 focus:border-brand-500 transition-all"
+                    />
+                  </div>
+                  <div>
+                    <label for="booking-phone" class="block text-xs font-medium text-slate-700 mb-1">
+                      Teléfono / WhatsApp *
+                    </label>
+                    <input
+                      id="booking-phone"
+                      name="telefono"
+                      type="tel"
+                      required
+                      placeholder="10 dígitos"
+                      class="w-full px-3.5 py-2.5 text-sm text-slate-800 bg-slate-50/70 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-500/30 focus:border-brand-500 transition-all"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label for="booking-modality" class="block text-xs font-medium text-slate-700 mb-1">
+                    Modalidad de consulta *
+                  </label>
+                  <select
+                    id="booking-modality"
+                    name="modalidad"
+                    required
+                    class="w-full px-3.5 py-2.5 text-sm text-slate-800 bg-slate-50/70 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-clinical-500/30 focus:border-clinical-600 transition-all"
+                  >
+                    <option value="Presencial en WTC CDMX">Presencial en WTC Ciudad de México</option>
+                    <option value="Consulta virtual (Videoconsulta)">Consulta virtual (Videoconsulta en línea)</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="booking-reason" class="block text-xs font-medium text-slate-700 mb-1">
+                    Motivo principal de consulta *
+                  </label>
+                  <select
+                    id="booking-reason"
+                    name="motivo"
+                    required
+                    class="w-full px-3.5 py-2.5 text-sm text-slate-800 bg-slate-50/70 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-clinical-500/30 focus:border-clinical-600 transition-all"
+                  >
+                    <option value="" disabled selected>Selecciona una opción...</option>
+                    <option value="Chequeo ginecológico / Prevención">Chequeo ginecológico / Prevención</option>
+                    <option value="Colposcopia / VPH / Papanicolaou alterado">Colposcopia / VPH / Papanicolaou alterado</option>
+                    <option value="Valoración mamaria / Nódulo o estudio de mama">Valoración mamaria / Nódulo o estudio de mama</option>
+                    <option value="Sangrado anormal / Evaluación de endometrio">Sangrado anormal / Evaluación de endometrio</option>
+                    <option value="Quiste ovárico / Masa pélvica">Quiste ovárico / Masa pélvica</option>
+                    <option value="Segunda opinión en Ginecología Oncológica">Segunda opinión en Ginecología Oncológica</option>
+                    <option value="Control prenatal / Obstetricia">Control prenatal / Obstetricia</option>
+                    <option value="Climaterio / Menopausia">Climaterio / Menopausia</option>
+                    <option value="Otro motivo de consulta">Otro motivo de consulta</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="booking-notes" class="block text-xs font-medium text-slate-700 mb-1">
+                    Síntomas o comentario breve <span class="text-slate-400 font-normal">(opcional)</span>
+                  </label>
+                  <textarea
+                    id="booking-notes"
+                    name="notas"
+                    rows="2"
+                    placeholder="Ej. Tengo un ultrasonido reciente o prefiero horario en fin de semana"
+                    class="w-full px-3.5 py-2 text-sm text-slate-800 bg-slate-50/70 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-500/30 focus:border-brand-500 transition-all resize-none"
+                  ></textarea>
+                </div>
+
+                <button
+                  type="submit"
+                  class="inline-flex items-center justify-center gap-2 w-full px-6 py-3.5 text-sm font-semibold text-white bg-gradient-to-r from-brand-600 to-brand-700 hover:from-brand-700 hover:to-brand-800 rounded-full shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
+                >
+                  <i data-lucide="message-circle" class="w-4 h-4"></i>
+                  <span>Solicitar consulta por WhatsApp</span>
+                </button>
+
+                <p class="text-[11px] text-slate-400 text-center leading-snug">
+                  Tu información es confidencial y se envía directamente al WhatsApp del consultorio.
+                </p>
+              </form>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 2. Especialidades y Servicios -->
-    <section id="especialidades" class="py-16 lg:py-20 bg-surface border-y border-brand-100/60">
+    <!-- 2. Especialidades y Servicios (Fondo Rosa Pálido con tarjetas diferenciadas Rosa/Guinda vs Azul-Turquesa) -->
+    <section id="especialidades" class="py-16 lg:py-20 bg-blush-50 border-y border-blush-200/70">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="max-w-2xl mb-10 sm:mb-12">
           <p class="text-xs font-semibold uppercase tracking-wider text-brand-600 mb-2">
@@ -326,10 +591,10 @@
         </div>
 
         <div class="grid md:grid-cols-2 gap-6 lg:gap-8">
-          <!-- Bloque 1: Ginecología y Obstetricia -->
-          <div class="bg-white border border-slate-200/80 hover:border-brand-200 rounded-2xl p-7 sm:p-8 shadow-sm hover:shadow-md transition-all duration-200 flex flex-col justify-between">
+          <!-- Bloque 1: Ginecología y Obstetricia (Acento Rosa Pálido / Guinda) -->
+          <div class="bg-white border border-blush-200/80 border-t-4 border-t-blush-500 hover:border-brand-300 rounded-2xl p-7 sm:p-8 shadow-sm hover:shadow-md transition-all duration-200 flex flex-col justify-between">
             <div>
-              <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-brand-50 to-brand-100/80 border border-brand-100 text-brand-700 flex items-center justify-center mb-5">
+              <div class="w-12 h-12 rounded-2xl bg-blush-100 border border-blush-200 text-brand-700 flex items-center justify-center mb-5">
                 <i data-lucide="heart-pulse" class="w-6 h-6"></i>
               </div>
 
@@ -342,23 +607,23 @@
 
               <ul class="space-y-3 text-sm text-slate-700 mb-8">
                 <li class="flex items-start gap-2.5">
-                  <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-600 shrink-0 mt-0.5"></i>
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-blush-500 shrink-0 mt-0.5"></i>
                   <span>Chequeo ginecológico anual y estudios preventivos</span>
                 </li>
                 <li class="flex items-start gap-2.5">
-                  <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-600 shrink-0 mt-0.5"></i>
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-blush-500 shrink-0 mt-0.5"></i>
                   <span>Control prenatal y acompañamiento obstétrico</span>
                 </li>
                 <li class="flex items-start gap-2.5">
-                  <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-600 shrink-0 mt-0.5"></i>
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-blush-500 shrink-0 mt-0.5"></i>
                   <span>Diagnóstico y tratamiento de alteraciones menstruales, miomas y quistes ováricos</span>
                 </li>
                 <li class="flex items-start gap-2.5">
-                  <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-600 shrink-0 mt-0.5"></i>
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-blush-500 shrink-0 mt-0.5"></i>
                   <span>Atención especializada en perimenopausia, climaterio y menopausia</span>
                 </li>
                 <li class="flex items-start gap-2.5">
-                  <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-600 shrink-0 mt-0.5"></i>
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-blush-500 shrink-0 mt-0.5"></i>
                   <span>Cirugía ginecológica de mínima invasión por laparoscopia</span>
                 </li>
               </ul>
@@ -368,17 +633,17 @@
               href="https://wa.me/525580065948?text=Hola%20Dra.%20Cynthia%2C%20me%20gustar%C3%ADa%20agendar%20una%20consulta%20de%20Ginecolog%C3%ADa%20y%20Obstetricia%20en%20WTC%20CDMX."
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center justify-center gap-2 w-full px-5 py-3 text-sm font-medium text-brand-700 bg-brand-50 hover:bg-brand-600 hover:text-white rounded-full transition-all duration-200"
+              class="inline-flex items-center justify-center gap-2 w-full px-5 py-3 text-sm font-medium text-brand-700 bg-blush-100 hover:bg-brand-600 hover:text-white rounded-full transition-all duration-200"
             >
               <i data-lucide="message-circle" class="w-4 h-4"></i>
               <span>Agendar en Ginecología y Obstetricia</span>
             </a>
           </div>
 
-          <!-- Bloque 2: Ginecología Oncológica -->
-          <div class="bg-white border border-slate-200/80 hover:border-brand-200 rounded-2xl p-7 sm:p-8 shadow-sm hover:shadow-md transition-all duration-200 flex flex-col justify-between">
+          <!-- Bloque 2: Ginecología Oncológica (Contraste Azul-Turquesa Clínico) -->
+          <div class="bg-white border border-clinical-200/80 border-t-4 border-t-clinical-600 hover:border-clinical-500 rounded-2xl p-7 sm:p-8 shadow-sm hover:shadow-md transition-all duration-200 flex flex-col justify-between">
             <div>
-              <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-brand-50 to-brand-100/80 border border-brand-100 text-brand-700 flex items-center justify-center mb-5">
+              <div class="w-12 h-12 rounded-2xl bg-clinical-50 border border-clinical-200 text-clinical-700 flex items-center justify-center mb-5">
                 <i data-lucide="stethoscope" class="w-6 h-6"></i>
               </div>
 
@@ -391,23 +656,23 @@
 
               <ul class="space-y-3 text-sm text-slate-700 mb-8">
                 <li class="flex items-start gap-2.5">
-                  <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-600 shrink-0 mt-0.5"></i>
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-clinical-600 shrink-0 mt-0.5"></i>
                   <span>Colposcopia de alta resolución, estudio de VPH y manejo de lesiones premalignas</span>
                 </li>
                 <li class="flex items-start gap-2.5">
-                  <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-600 shrink-0 mt-0.5"></i>
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-clinical-600 shrink-0 mt-0.5"></i>
                   <span>Valoración de nódulos o estudios sospechosos de mama, biopsias y cirugía oncoplástica</span>
                 </li>
                 <li class="flex items-start gap-2.5">
-                  <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-600 shrink-0 mt-0.5"></i>
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-clinical-600 shrink-0 mt-0.5"></i>
                   <span>Abordaje quirúrgico especializado en cáncer de cuello uterino, endometrio, ovario, vulva y vagina</span>
                 </li>
                 <li class="flex items-start gap-2.5">
-                  <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-600 shrink-0 mt-0.5"></i>
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-clinical-600 shrink-0 mt-0.5"></i>
                   <span>Valoración de riesgo hereditario y seguimiento oncológico postratamiento</span>
                 </li>
                 <li class="flex items-start gap-2.5">
-                  <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-600 shrink-0 mt-0.5"></i>
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-clinical-600 shrink-0 mt-0.5"></i>
                   <span>Segundas opiniones y coordinación con comités multidisciplinarios</span>
                 </li>
               </ul>
@@ -417,7 +682,7 @@
               href="https://wa.me/525580065948?text=Hola%20Dra.%20Cynthia%2C%20me%20gustar%C3%ADa%20agendar%20una%20valoraci%C3%B3n%20en%20Ginecolog%C3%ADa%20Oncol%C3%B3gica%20o%20Patolog%C3%ADa%20Mamaria%20en%20WTC%20CDMX."
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center justify-center gap-2 w-full px-5 py-3 text-sm font-medium text-white bg-gradient-to-r from-brand-600 to-brand-700 hover:from-brand-700 hover:to-brand-800 rounded-full shadow-sm transition-all duration-200"
+              class="inline-flex items-center justify-center gap-2 w-full px-5 py-3 text-sm font-medium text-white bg-gradient-to-r from-clinical-600 to-clinical-700 hover:from-clinical-700 hover:to-clinical-800 rounded-full shadow-sm transition-all duration-200"
             >
               <i data-lucide="message-circle" class="w-4 h-4"></i>
               <span>Agendar en Ginecología Oncológica</span>
@@ -425,10 +690,10 @@
           </div>
         </div>
 
-        <!-- Opción de Consulta Virtual -->
-        <div class="mt-6 lg:mt-8 bg-white border border-brand-100 rounded-2xl p-6 sm:p-7 shadow-sm hover:shadow-md transition-all duration-200 flex flex-col md:flex-row md:items-center justify-between gap-6">
+        <!-- Opción de Consulta Virtual (Contraste Azul-Agua Suave) -->
+        <div class="mt-6 lg:mt-8 bg-gradient-to-r from-clinical-50 via-white to-blush-50 border border-clinical-200/80 rounded-2xl p-6 sm:p-7 shadow-sm hover:shadow-md transition-all duration-200 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div class="flex items-start gap-4 max-w-2xl">
-            <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-brand-50 to-brand-100/80 border border-brand-100 text-brand-700 flex items-center justify-center shrink-0 mt-0.5">
+            <div class="w-11 h-11 rounded-2xl bg-clinical-100 border border-clinical-200 text-clinical-700 flex items-center justify-center shrink-0 mt-0.5">
               <i data-lucide="video" class="w-5 h-5"></i>
             </div>
             <div>
@@ -436,7 +701,7 @@
                 <h3 class="font-display text-base sm:text-lg font-bold text-slate-900">
                   Consulta virtual (Videoconsulta)
                 </h3>
-                <span class="text-[11px] font-medium text-brand-700 bg-brand-50 border border-brand-100 px-2.5 py-0.5 rounded-full">
+                <span class="text-[11px] font-semibold text-clinical-700 bg-clinical-100/80 border border-clinical-200 px-2.5 py-0.5 rounded-full">
                   Disponible en línea
                 </span>
               </div>
@@ -450,7 +715,7 @@
             href="https://wa.me/525580065948?text=Hola%20Dra.%20Cynthia%2C%20me%20gustar%C3%ADa%20agendar%20una%20consulta%20virtual%20(videoconsulta)."
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-medium text-brand-700 bg-brand-50 hover:bg-brand-600 hover:text-white rounded-full transition-all duration-200 shrink-0"
+            class="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-medium text-white bg-clinical-600 hover:bg-clinical-700 rounded-full shadow-sm transition-all duration-200 shrink-0"
           >
             <i data-lucide="video" class="w-4 h-4"></i>
             <span>Agendar consulta virtual</span>
@@ -486,9 +751,9 @@
             <button
               id="btn-otros-temas"
               type="button"
-              class="inline-flex items-center justify-center gap-2 px-5 py-2.5 text-sm font-medium text-brand-700 bg-brand-50/70 hover:bg-brand-100/80 border border-brand-200/70 rounded-full transition-all duration-200"
+              class="inline-flex items-center justify-center gap-2 px-5 py-2.5 text-sm font-medium text-clinical-700 bg-clinical-50 hover:bg-clinical-100 border border-clinical-200 rounded-full transition-all duration-200"
             >
-              <i data-lucide="refresh-cw" class="w-4 h-4 text-brand-600"></i>
+              <i data-lucide="refresh-cw" class="w-4 h-4 text-clinical-600"></i>
               <span>Ver otras enfermedades y recomendaciones</span>
             </button>
           </div>
@@ -511,35 +776,48 @@
       </div>
     </section>
 
-    <!-- 4. Ubicación y Contacto (WTC CDMX) -->
-    <section id="ubicacion" class="py-16 lg:py-20 bg-surface border-y border-brand-100/60">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- 4. Ubicación y Contacto (WTC CDMX con fotografía de fondo y filtro azul-verde) -->
+    <section id="ubicacion" class="relative py-20 lg:py-24 overflow-hidden">
+      <!-- Fotografía del WTC recortada a lo largo de la sección y ligeramente difuminada -->
+      <div class="absolute inset-0 z-0" aria-hidden="true">
+        <img
+          src="assets/World_Trade_Center_Ciudad_de_Me%CC%81xico.jpeg"
+          alt="World Trade Center Ciudad de México"
+          class="w-full h-full object-cover object-[center_14%] scale-105 blur-[2px]"
+          loading="lazy"
+        />
+        <!-- Filtro azul-verde (teal clínico) translúcido sobre la imagen -->
+        <div class="absolute inset-0 bg-gradient-to-br from-clinical-900/80 via-clinical-800/75 to-teal-900/75 backdrop-blur-[1px]"></div>
+      </div>
+
+      <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="max-w-2xl mb-10 sm:mb-12">
-          <p class="text-xs font-semibold uppercase tracking-wider text-brand-600 mb-2">
+          <span class="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-clinical-100 bg-white/10 border border-white/20 backdrop-blur-sm px-3.5 py-1 rounded-full mb-3">
+            <i data-lucide="building-2" class="w-3.5 h-3.5 text-clinical-200"></i>
             Consultorio privado
-          </p>
-          <h2 class="font-display text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight mb-3">
+          </span>
+          <h2 class="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight mb-3">
             Ubicación y citas en WTC Ciudad de México
           </h2>
-          <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+          <p class="text-sm sm:text-base text-clinical-50/90 leading-relaxed">
             Ubicación céntrica de fácil acceso en la colonia Nápoles, con estacionamiento en el edificio y conexión directa con Metrobús.
           </p>
         </div>
 
         <div class="grid lg:grid-cols-12 gap-6 lg:gap-8">
           <!-- Tarjeta de Dirección y Cómo Llegar -->
-          <div class="lg:col-span-7 bg-white border border-slate-200/80 rounded-2xl p-7 sm:p-8 shadow-sm flex flex-col justify-between">
+          <div class="lg:col-span-7 bg-white/95 backdrop-blur-md border border-white/50 rounded-2xl p-7 sm:p-8 shadow-xl flex flex-col justify-between">
             <div>
               <div class="flex items-start gap-3.5 mb-6">
-                <div class="w-11 h-11 rounded-xl bg-brand-50 border border-brand-100 text-brand-700 flex items-center justify-center shrink-0">
+                <div class="w-11 h-11 rounded-xl bg-clinical-50 border border-clinical-200 text-clinical-700 flex items-center justify-center shrink-0">
                   <i data-lucide="map-pin" class="w-5 h-5"></i>
                 </div>
                 <div>
-                  <h3 class="text-lg font-semibold text-slate-900">
+                  <h3 class="font-display text-lg font-bold text-slate-900">
                     World Trade Center Ciudad de México
                   </h3>
                   <p class="text-sm text-slate-600 mt-1 leading-relaxed">
-                    Montecito 38, <strong class="font-semibold text-slate-800">Piso 34, Consultorio 28</strong><br />
+                    Montecito 38, <strong class="font-semibold text-brand-700">Piso 34, Consultorio 28</strong><br />
                     Col. Nápoles, Alcaldía Benito Juárez, C.P. 03810, Ciudad de México
                   </p>
                 </div>
@@ -547,19 +825,19 @@
 
               <div class="space-y-3.5 pt-5 border-t border-slate-100 text-sm text-slate-600 mb-7">
                 <div class="flex items-start gap-3">
-                  <i data-lucide="car" class="w-4 h-4 text-brand-600 shrink-0 mt-0.5"></i>
+                  <i data-lucide="car" class="w-4 h-4 text-clinical-600 shrink-0 mt-0.5"></i>
                   <span>
                     <strong class="font-medium text-slate-800">Estacionamiento:</strong> Subterráneo dentro del complejo WTC, con acceso por las calles Montecito y Dakota.
                   </span>
                 </div>
                 <div class="flex items-start gap-3">
-                  <i data-lucide="tram-front" class="w-4 h-4 text-brand-600 shrink-0 mt-0.5"></i>
+                  <i data-lucide="tram-front" class="w-4 h-4 text-clinical-600 shrink-0 mt-0.5"></i>
                   <span>
                     <strong class="font-medium text-slate-800">Transporte público:</strong> A unos pasos de la estación <strong class="font-medium text-slate-800">Metrobús Poliforum</strong> (Línea 1) sobre Av. Insurgentes Sur.
                   </span>
                 </div>
                 <div class="flex items-start gap-3">
-                  <i data-lucide="id-card" class="w-4 h-4 text-brand-600 shrink-0 mt-0.5"></i>
+                  <i data-lucide="id-card" class="w-4 h-4 text-clinical-600 shrink-0 mt-0.5"></i>
                   <span>
                     <strong class="font-medium text-slate-800">Ingreso a la torre:</strong> Presentar una identificación oficial vigente en el registro de planta baja para subir al Piso 34.
                   </span>
@@ -573,30 +851,30 @@
                 href="https://www.google.com/maps/search/?api=1&query=World+Trade+Center+Ciudad+de+Mexico+Montecito+38+Napoles"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-flex items-center justify-center gap-2 px-5 py-3 text-sm font-medium text-slate-700 bg-surface hover:bg-brand-50 hover:text-brand-700 border border-slate-200/80 hover:border-brand-200 rounded-full transition-all duration-200"
+                class="inline-flex items-center justify-center gap-2 px-5 py-3 text-sm font-medium text-clinical-700 bg-clinical-50 hover:bg-clinical-600 hover:text-white border border-clinical-200 rounded-full transition-all duration-200"
               >
-                <i data-lucide="map" class="w-4 h-4 text-brand-600"></i>
+                <i data-lucide="map" class="w-4 h-4"></i>
                 <span>Abrir en Google Maps</span>
               </a>
               <a
                 href="https://waze.com/ul?q=World%20Trade%20Center%20Ciudad%20de%20Mexico%20Montecito%2038&navigate=yes"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-flex items-center justify-center gap-2 px-5 py-3 text-sm font-medium text-slate-700 bg-surface hover:bg-brand-50 hover:text-brand-700 border border-slate-200/80 hover:border-brand-200 rounded-full transition-all duration-200"
+                class="inline-flex items-center justify-center gap-2 px-5 py-3 text-sm font-medium text-brand-700 bg-blush-100 hover:bg-brand-600 hover:text-white border border-blush-200 rounded-full transition-all duration-200"
               >
-                <i data-lucide="navigation" class="w-4 h-4 text-brand-600"></i>
+                <i data-lucide="navigation" class="w-4 h-4"></i>
                 <span>Abrir en Waze</span>
               </a>
             </div>
           </div>
 
           <!-- Tarjeta de Horarios y Contacto Directo -->
-          <div class="lg:col-span-5 bg-white border border-slate-200/80 rounded-2xl p-7 sm:p-8 shadow-sm flex flex-col justify-between">
+          <div class="lg:col-span-5 bg-white/95 backdrop-blur-md border border-white/50 rounded-2xl p-7 sm:p-8 shadow-xl flex flex-col justify-between">
             <div class="space-y-6">
               <div>
                 <div class="flex items-center gap-2.5 mb-3">
-                  <i data-lucide="clock" class="w-5 h-5 text-brand-600"></i>
-                  <h3 class="text-lg font-semibold text-slate-900">
+                  <i data-lucide="clock" class="w-5 h-5 text-clinical-600"></i>
+                  <h3 class="font-display text-lg font-bold text-slate-900">
                     Horarios y citas
                   </h3>
                 </div>
@@ -611,9 +889,9 @@
                   href="https://wa.me/525580065948?text=Hola%20Dra.%20Cynthia%2C%20quisiera%20consultar%20horarios%20disponibles%20para%20agendar%20cita%20en%20WTC%20CDMX."
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="flex items-center gap-3 text-slate-700 hover:text-brand-700 transition-colors"
+                  class="flex items-center gap-3 text-slate-700 hover:text-clinical-700 transition-colors"
                 >
-                  <i data-lucide="phone" class="w-4 h-4 text-brand-600 shrink-0"></i>
+                  <i data-lucide="phone" class="w-4 h-4 text-clinical-600 shrink-0"></i>
                   <span>WhatsApp: <strong class="font-semibold">55 8006 5948</strong></span>
                 </a>
                 <a
@@ -629,7 +907,7 @@
                   rel="noopener noreferrer"
                   class="flex items-center gap-3 text-slate-700 hover:text-brand-700 transition-colors"
                 >
-                  <i data-lucide="instagram" class="w-4 h-4 text-brand-600 shrink-0"></i>
+                  <svg class="w-4 h-4 text-blush-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
                   <span>Instagram: <strong class="font-semibold">@dracynthiareyes</strong></span>
                 </a>
               </div>
@@ -652,7 +930,7 @@
                 href="#"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="hidden items-center justify-center gap-2 w-full px-6 py-3 text-sm font-medium text-brand-700 bg-brand-50 hover:bg-brand-100 rounded-full transition-all duration-200"
+                class="hidden items-center justify-center gap-2 w-full px-6 py-3 text-sm font-medium text-clinical-700 bg-clinical-50 hover:bg-clinical-100 rounded-full transition-all duration-200"
               >
                 <i data-lucide="calendar" class="w-4 h-4"></i>
                 <span>Ver agenda disponible</span>
@@ -775,7 +1053,7 @@
                   rel="noopener noreferrer"
                   class="inline-flex items-center gap-1.5 text-slate-600 hover:text-brand-700 transition-colors"
                 >
-                  <i data-lucide="instagram" class="w-3.5 h-3.5"></i>
+                  <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
                   <span>@dracynthiareyes</span>
                 </a>
                 <a
@@ -790,6 +1068,74 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+    <!-- 6. Preguntas Frecuentes (FAQ) -->
+    <section id="faq" class="py-16 lg:py-20 bg-blush-50/70 border-t border-blush-200/70">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
+          <p class="text-xs font-semibold uppercase tracking-wider text-clinical-700 mb-2">
+            Dudas frecuentes
+          </p>
+          <h2 class="font-display text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight mb-3">
+            Preguntas frecuentes sobre tu consulta
+          </h2>
+          <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+            Información práctica para que llegues tranquila y preparada a tu valoración presencial o en línea.
+          </p>
+        </div>
+
+        <div class="space-y-3.5">
+          <details class="group bg-white border border-slate-200/80 open:border-clinical-200 rounded-2xl shadow-sm transition-all duration-200">
+            <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-6 py-5 font-display text-sm sm:text-base font-semibold text-slate-900">
+              <span>¿Qué debo llevar a mi primera consulta?</span>
+              <i data-lucide="chevron-down" class="w-5 h-5 text-clinical-600 shrink-0 transition-transform duration-200 group-open:rotate-180"></i>
+            </summary>
+            <div class="px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
+              Es muy útil llevar tus estudios previos recientes (Papanicolaou, prueba de VPH, colposcopia, mastografía, ultrasonido o reportes de biopsia), una lista de los medicamentos que tomas actualmente y una identificación oficial vigente para el registro en planta baja del WTC.
+            </div>
+          </details>
+
+          <details class="group bg-white border border-slate-200/80 open:border-clinical-200 rounded-2xl shadow-sm transition-all duration-200">
+            <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-6 py-5 font-display text-sm sm:text-base font-semibold text-slate-900">
+              <span>¿En qué casos conviene agendar una consulta virtual (videoconsulta)?</span>
+              <i data-lucide="chevron-down" class="w-5 h-5 text-clinical-600 shrink-0 transition-transform duration-200 group-open:rotate-180"></i>
+            </summary>
+            <div class="px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
+              La videoconsulta es ideal para interpretación de resultados (laboratorio, imagen o patología), segundas opiniones en ginecología oncológica o patología mamaria, seguimiento de tratamientos y orientación preventiva sin necesidad de trasladarte.
+            </div>
+          </details>
+
+          <details class="group bg-white border border-slate-200/80 open:border-clinical-200 rounded-2xl shadow-sm transition-all duration-200">
+            <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-6 py-5 font-display text-sm sm:text-base font-semibold text-slate-900">
+              <span>¿Cuándo es recomendable acudir con una ginecóloga oncóloga?</span>
+              <i data-lucide="chevron-down" class="w-5 h-5 text-clinical-600 shrink-0 transition-transform duration-200 group-open:rotate-180"></i>
+            </summary>
+            <div class="px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
+              Conviene acudir ante un Papanicolaou o prueba de VPH alterada, nódulos o estudios sospechosos de mama, sangrado vaginal después de la menopausia, quistes ováricos complejos, antecedentes familiares de cáncer ginecológico o de mama, o cuando deseas una segunda opinión antes de una cirugía.
+            </div>
+          </details>
+
+          <details class="group bg-white border border-slate-200/80 open:border-clinical-200 rounded-2xl shadow-sm transition-all duration-200">
+            <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-6 py-5 font-display text-sm sm:text-base font-semibold text-slate-900">
+              <span>¿Cómo se realiza una colposcopia y es dolorosa?</span>
+              <i data-lucide="chevron-down" class="w-5 h-5 text-clinical-600 shrink-0 transition-transform duration-200 group-open:rotate-180"></i>
+            </summary>
+            <div class="px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
+              Es un estudio de consultorio rápido y bien tolerado, similar a la toma de un Papanicolaou. Permite observar el cuello uterino con un microscopio especial para detectar a tiempo lesiones asociadas al VPH y definir con precisión si requieren solo vigilancia o tratamiento oportuno.
+            </div>
+          </details>
+
+          <details class="group bg-white border border-slate-200/80 open:border-clinical-200 rounded-2xl shadow-sm transition-all duration-200">
+            <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-6 py-5 font-display text-sm sm:text-base font-semibold text-slate-900">
+              <span>¿Cómo funciona el acceso y estacionamiento en el WTC Ciudad de México?</span>
+              <i data-lucide="chevron-down" class="w-5 h-5 text-clinical-600 shrink-0 transition-transform duration-200 group-open:rotate-180"></i>
+            </summary>
+            <div class="px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
+              El World Trade Center cuenta con estacionamiento subterráneo (acceso por Montecito y Dakota) y se ubica a unos pasos del Metrobús Poliforum (Línea 1). Para subir al <strong>Piso 34, Consultorio 28</strong>, solo necesitas presentar una identificación oficial vigente en el registro de planta baja.
+            </div>
+          </details>
         </div>
       </div>
     </section>

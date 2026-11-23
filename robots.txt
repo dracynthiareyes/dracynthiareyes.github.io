@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dracynthiareyes.github.io/sitemap.xml
