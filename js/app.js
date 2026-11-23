@@ -73,7 +73,7 @@ function crearTarjetaHtml(tarjeta) {
           ${escaparHtml(tarjeta.resumen_paciente)}
         </p>
 
-        <div class="bg-slate-50 border border-slate-100 rounded-xl p-3.5 mb-5">
+        <div class="bg-surface border border-brand-100/60 rounded-xl p-3.5 mb-5">
           <p class="text-xs text-slate-700 leading-relaxed">
             <span class="font-semibold text-slate-800">Recomendación:</span>
             ${escaparHtml(tarjeta.accion_sugerida)}
@@ -91,7 +91,7 @@ function crearTarjetaHtml(tarjeta) {
           href="${urlWhatsapp}"
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center justify-center gap-2 w-full px-4 py-2.5 text-sm font-medium text-brand-700 bg-brand-50/80 hover:bg-brand-600 hover:text-white rounded-xl transition-all duration-200"
+          class="inline-flex items-center justify-center gap-2 w-full px-5 py-2.5 text-sm font-medium text-brand-700 bg-brand-50/80 hover:bg-brand-600 hover:text-white rounded-full transition-all duration-200"
         >
           <i data-lucide="message-circle" class="w-4 h-4"></i>
           <span>Consultar sobre este tema</span>
