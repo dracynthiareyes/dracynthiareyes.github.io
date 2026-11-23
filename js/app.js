@@ -56,16 +56,16 @@ function crearTarjetaHtml(tarjeta) {
   );
 
   return `
-    <article class="group flex flex-col justify-between bg-white border border-slate-200/80 rounded-2xl p-6 shadow-sm hover:shadow-md hover:border-emerald-200 transition-all duration-200">
+    <article class="group flex flex-col justify-between bg-white border border-slate-200/80 rounded-2xl p-6 shadow-sm hover:shadow-md hover:border-brand-200 transition-all duration-200">
       <div>
         <div class="flex items-center justify-between gap-2 mb-4">
-          <span class="inline-flex items-center gap-1.5 text-xs font-medium text-emerald-700 bg-emerald-50 border border-emerald-100 px-3 py-1 rounded-full">
+          <span class="inline-flex items-center gap-1.5 text-xs font-medium text-brand-700 bg-brand-50 border border-brand-100 px-3 py-1 rounded-full">
             <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
             ${escaparHtml(tarjeta.categoria)}
           </span>
         </div>
 
-        <h3 class="text-lg font-semibold text-slate-900 leading-snug mb-3 group-hover:text-emerald-700 transition-colors duration-200">
+        <h3 class="text-lg font-semibold text-slate-900 leading-snug mb-3 group-hover:text-brand-700 transition-colors duration-200">
           ${escaparHtml(tarjeta.titulo)}
         </h3>
 
@@ -91,7 +91,7 @@ function crearTarjetaHtml(tarjeta) {
           href="${urlWhatsapp}"
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center justify-center gap-2 w-full px-4 py-2.5 text-sm font-medium text-emerald-700 bg-emerald-50/80 hover:bg-emerald-600 hover:text-white rounded-xl transition-all duration-200"
+          class="inline-flex items-center justify-center gap-2 w-full px-4 py-2.5 text-sm font-medium text-brand-700 bg-brand-50/80 hover:bg-brand-600 hover:text-white rounded-xl transition-all duration-200"
         >
           <i data-lucide="message-circle" class="w-4 h-4"></i>
           <span>Consultar sobre este tema</span>
@@ -133,11 +133,7 @@ async function initTarjetasPreventivas() {
     const aplicarHtml = () => {
       contenedor.innerHTML = seleccion.map(crearTarjetaHtml).join("");
       if (indicador) {
-        const esBloqueActual = offsetManual % totalGrupos === 0;
-        const etiqueta = esBloqueActual
-          ? "Selección de esta quincena"
-          : `Bloque ${grupoActual + 1} de ${totalGrupos}`;
-        indicador.textContent = `${etiqueta} · ${tarjetas.length} temas disponibles`;
+        indicador.textContent = `Mostrando ${seleccion.length} de ${tarjetas.length} temas`;
       }
       if (window.lucide) {
         window.lucide.createIcons();
