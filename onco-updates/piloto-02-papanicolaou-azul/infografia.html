@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>OncoUpdates 02 — ¿Qué hacer ante un Papanicolaou anormal?</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      width: 1080px;
+      height: 1350px;
+      overflow: hidden;
+      font-family: "Avenir Next", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+      background: #EFFAFC;
+      color: #0A3944;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .canvas {
+      position: relative;
+      width: 1080px;
+      height: 1350px;
+      padding: 46px 58px 42px 58px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background:
+        radial-gradient(circle at 92% 8%, rgba(176, 230, 238, 0.55) 0%, rgba(239, 250, 252, 0) 44%),
+        radial-gradient(circle at 8% 92%, rgba(20, 153, 171, 0.16) 0%, rgba(239, 250, 252, 0) 42%),
+        linear-gradient(165deg, #F8FEFF 0%, #EFFAFC 55%, #E3F6F9 100%);
+    }
+
+    .frame-accent {
+      position: absolute;
+      inset: 22px;
+      border: 1.5px solid rgba(14, 124, 139, 0.24);
+      border-radius: 28px;
+      pointer-events: none;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 2;
+    }
+
+    .badges {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .badge-onco {
+      background: linear-gradient(135deg, #0A3944 0%, #0E7C8B 100%);
+      color: #FFFFFF;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      padding: 11px 24px;
+      border-radius: 999px;
+      box-shadow: 0 6px 18px rgba(10, 57, 68, 0.2);
+    }
+
+    .badge-cat {
+      background: rgba(255, 255, 255, 0.88);
+      border: 1.5px solid rgba(14, 124, 139, 0.28);
+      color: #0B616E;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 10px 20px;
+      border-radius: 999px;
+    }
+
+    .logo-wrap {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      background: #FFFFFF;
+      padding: 4px;
+      box-shadow: 0 8px 24px rgba(10, 57, 68, 0.12);
+      border: 1.5px solid rgba(201, 154, 59, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    /* Hero */
+    .hero {
+      z-index: 2;
+    }
+
+    .hero h1 {
+      font-family: "Georgia", "Palatino", serif;
+      font-size: 56px;
+      line-height: 1.12;
+      font-weight: 700;
+      color: #0A3944;
+      letter-spacing: -0.01em;
+    }
+
+    .hero h1 .highlight {
+      color: #0E7C8B;
+      font-style: italic;
+    }
+
+    .hero-divider {
+      width: 88px;
+      height: 4px;
+      background: linear-gradient(90deg, #C99A3B 0%, #1499AB 100%);
+      border-radius: 4px;
+      margin: 16px 0 14px 0;
+    }
+
+    .hero p {
+      font-size: 24px;
+      line-height: 1.38;
+      color: #24535E;
+      font-weight: 500;
+      max-width: 940px;
+    }
+
+    /* 3-Step Vertical Cards */
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      z-index: 2;
+    }
+
+    .step-card {
+      background: rgba(255, 255, 255, 0.94);
+      border: 1.5px solid rgba(14, 124, 139, 0.18);
+      border-left: 6px solid #1499AB;
+      border-radius: 22px;
+      padding: 24px 28px;
+      box-shadow: 0 10px 26px rgba(10, 57, 68, 0.06);
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .step-badge {
+      flex-shrink: 0;
+      width: 68px;
+      height: 68px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #D7F3F7 0%, #EFFAFC 100%);
+      border: 1.5px solid rgba(20, 153, 171, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Georgia", serif;
+      font-size: 30px;
+      font-weight: 700;
+      color: #0B616E;
+    }
+
+    .step-body h2 {
+      font-size: 25px;
+      font-weight: 700;
+      color: #0A3944;
+      margin-bottom: 5px;
+    }
+
+    .step-body p {
+      font-size: 20px;
+      line-height: 1.38;
+      color: #2C5A66;
+    }
+
+    /* Callout */
+    .callout {
+      z-index: 2;
+      background: linear-gradient(135deg, #0A3944 0%, #0E7C8B 100%);
+      border-radius: 24px;
+      padding: 24px 30px;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      box-shadow: 0 14px 32px rgba(10, 57, 68, 0.22);
+      border: 1.5px solid rgba(201, 154, 59, 0.45);
+    }
+
+    .callout-icon {
+      flex-shrink: 0;
+      width: 76px;
+      height: 76px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1.5px solid rgba(176, 230, 238, 0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .callout-text h3 {
+      font-size: 23px;
+      font-weight: 700;
+      color: #F6D88C;
+      margin-bottom: 5px;
+    }
+
+    .callout-text p {
+      font-size: 20px;
+      line-height: 1.36;
+      color: #EFFAFC;
+    }
+
+    /* Footer */
+    .footer {
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .footer-main {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 4px;
+    }
+
+    .brand-info {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .handle {
+      font-size: 27px;
+      font-weight: 700;
+      color: #0A3944;
+      letter-spacing: -0.01em;
+    }
+
+    .credentials {
+      font-size: 17px;
+      font-weight: 500;
+      color: #2E5B66;
+    }
+
+    .cta-pill {
+      background: #FFFFFF;
+      border: 2px solid #0E7C8B;
+      border-radius: 999px;
+      padding: 12px 24px;
+      text-align: right;
+      box-shadow: 0 6px 16px rgba(14, 124, 139, 0.12);
+    }
+
+    .cta-pill .cta-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #0A3944;
+      display: block;
+    }
+
+    .cta-pill .cta-sub {
+      font-size: 15px;
+      font-weight: 600;
+      color: #0E7C8B;
+      display: block;
+      margin-top: 2px;
+    }
+
+    .source-bar {
+      border-top: 1px solid rgba(10, 57, 68, 0.16);
+      padding-top: 10px;
+      font-size: 14.5px;
+      line-height: 1.35;
+      color: #3B6670;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .source-bar strong {
+      color: #0A3944;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="canvas">
+    <div class="frame-accent"></div>
+
+    <!-- Header -->
+    <header class="header">
+      <div class="badges">
+        <span class="badge-onco">OncoUpdates · 02</span>
+        <span class="badge-cat">Prevención Cervical</span>
+      </div>
+      <div class="logo-wrap">
+        <img src="../../assets/logo-cr.png" alt="Logo Dra. Cynthia Reyes" />
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <h1>¿Qué hacer ante un <span class="highlight">Papanicolaou anormal?</span></h1>
+      <div class="hero-divider"></div>
+      <p>Recibir un resultado alterado suele generar miedo, pero en la mayoría de los casos no significa cáncer: es una oportunidad para actuar a tiempo.</p>
+    </section>
+
+    <!-- 3 Steps -->
+    <section class="steps">
+      <article class="step-card">
+        <div class="step-badge">01</div>
+        <div class="step-body">
+          <h2>Mantén la calma y no te automediques</h2>
+          <p>Muchas alteraciones corresponden a inflamación, infecciones leves o lesiones premalignas completamente tratables si se atienden de forma correcta.</p>
+        </div>
+      </article>
+
+      <article class="step-card">
+        <div class="step-badge">02</div>
+        <div class="step-body">
+          <h2>Acude a colposcopia especializada</h2>
+          <p>La colposcopia permite observar el cuello uterino con aumento, identificar si existe una lesión real y decidir si se requiere una biopsia dirigida.</p>
+        </div>
+      </article>
+
+      <article class="step-card">
+        <div class="step-badge">03</div>
+        <div class="step-body">
+          <h2>Lleva tus estudios previos a consulta</h2>
+          <p>Tu historial de Papanicolaou y pruebas de VPH ayuda a definir un seguimiento personalizado, evitando procedimientos innecesarios o retrasos.</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- Callout -->
+    <section class="callout">
+      <div class="callout-icon">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#F6D88C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="m9 12 2 2 4-4"/>
+        </svg>
+      </div>
+      <div class="callout-text">
+        <h3>Detectar a tiempo protege tu salud</h3>
+        <p>Las lesiones precancerosas detectadas oportunamente tienen un manejo sencillo y altamente efectivo cuando son valoradas por una especialista.</p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-main">
+        <div class="brand-info">
+          <span class="handle">@dracynthiareyes</span>
+          <span class="credentials">Dra. Cynthia Reyes López · Ginecología Oncológica · WTC CDMX y Consulta Virtual</span>
+        </div>
+        <div class="cta-pill">
+          <span class="cta-title">Agenda tu consulta</span>
+          <span class="cta-sub">Datos de contacto en la bio</span>
+        </div>
+      </div>
+      <div class="source-bar">
+        <span><strong>Fuente:</strong> Atlas de Oncología Ginecológica (UNAM) y ESMO Essentials in Gynaecological Tumours (2024).</span>
+        <span>Contenido educativo · No sustituye consulta médica</span>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

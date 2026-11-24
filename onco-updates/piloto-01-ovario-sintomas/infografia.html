@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>OncoUpdates 01 — Síntomas abdominales que no debes ignorar</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      width: 1080px;
+      height: 1350px;
+      overflow: hidden;
+      font-family: "Avenir Next", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+      background: #FDF4F7;
+      color: #3A1626;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .canvas {
+      position: relative;
+      width: 1080px;
+      height: 1350px;
+      padding: 46px 58px 42px 58px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background:
+        radial-gradient(circle at 92% 8%, rgba(248, 207, 224, 0.55) 0%, rgba(253, 244, 247, 0) 42%),
+        radial-gradient(circle at 8% 92%, rgba(241, 167, 197, 0.35) 0%, rgba(253, 244, 247, 0) 40%),
+        linear-gradient(165deg, #FFF9FB 0%, #FDF4F7 55%, #FBEBF1 100%);
+    }
+
+    /* Subtle decorative gold hairline frame */
+    .frame-accent {
+      position: absolute;
+      inset: 22px;
+      border: 1.5px solid rgba(201, 154, 59, 0.28);
+      border-radius: 28px;
+      pointer-events: none;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 2;
+    }
+
+    .badges {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .badge-onco {
+      background: linear-gradient(135deg, #6B1737 0%, #9E2656 100%);
+      color: #FFFFFF;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      padding: 11px 24px;
+      border-radius: 999px;
+      box-shadow: 0 6px 18px rgba(107, 23, 55, 0.22);
+    }
+
+    .badge-cat {
+      background: rgba(255, 255, 255, 0.85);
+      border: 1.5px solid rgba(200, 62, 114, 0.28);
+      color: #8F224B;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 10px 20px;
+      border-radius: 999px;
+    }
+
+    .logo-wrap {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      background: #FFFFFF;
+      padding: 4px;
+      box-shadow: 0 8px 24px rgba(107, 23, 55, 0.14);
+      border: 1.5px solid rgba(201, 154, 59, 0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    /* Hero Title */
+    .hero {
+      z-index: 2;
+      margin-top: 2px;
+    }
+
+    .hero h1 {
+      font-family: "Georgia", "Palatino", serif;
+      font-size: 56px;
+      line-height: 1.12;
+      font-weight: 700;
+      color: #4D0F2B;
+      letter-spacing: -0.01em;
+    }
+
+    .hero h1 .highlight {
+      color: #C83E72;
+      font-style: italic;
+    }
+
+    .hero-divider {
+      width: 88px;
+      height: 4px;
+      background: linear-gradient(90deg, #C99A3B 0%, #C83E72 100%);
+      border-radius: 4px;
+      margin: 16px 0 14px 0;
+    }
+
+    .hero p {
+      font-size: 24px;
+      line-height: 1.38;
+      color: #5C3344;
+      font-weight: 500;
+      max-width: 940px;
+    }
+
+    /* 2x2 Symptom Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      z-index: 2;
+      margin-top: 4px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1.5px solid rgba(200, 62, 114, 0.16);
+      border-radius: 24px;
+      padding: 24px 26px;
+      box-shadow: 0 12px 30px rgba(107, 23, 55, 0.06);
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, #C83E72 0%, #E79BB7 100%);
+    }
+
+    .card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .icon-box {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #FCE8F0 0%, #FFF5F8 100%);
+      border: 1.5px solid rgba(200, 62, 114, 0.22);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card-num {
+      font-family: "Georgia", serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: rgba(201, 154, 59, 0.65);
+    }
+
+    .card h2 {
+      font-size: 25px;
+      line-height: 1.2;
+      font-weight: 700;
+      color: #4D0F2B;
+    }
+
+    .card p {
+      font-size: 19.5px;
+      line-height: 1.38;
+      color: #633B4B;
+      font-weight: 400;
+    }
+
+    /* Key Rule Callout */
+    .callout {
+      z-index: 2;
+      background: linear-gradient(135deg, #5A1230 0%, #8F224B 100%);
+      border-radius: 24px;
+      padding: 24px 30px;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      box-shadow: 0 14px 32px rgba(90, 18, 48, 0.22);
+      border: 1.5px solid rgba(201, 154, 59, 0.48);
+    }
+
+    .callout-badge {
+      flex-shrink: 0;
+      width: 84px;
+      height: 84px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1.5px solid rgba(240, 206, 130, 0.55);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .callout-badge .big {
+      font-family: "Georgia", serif;
+      font-size: 34px;
+      font-weight: 700;
+      line-height: 1;
+      color: #F6D88C;
+    }
+
+    .callout-badge .small {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #FCE8F0;
+      margin-top: 4px;
+    }
+
+    .callout-text h3 {
+      font-size: 23px;
+      font-weight: 700;
+      color: #F6D88C;
+      margin-bottom: 5px;
+      letter-spacing: 0.01em;
+    }
+
+    .callout-text p {
+      font-size: 20px;
+      line-height: 1.36;
+      color: #FFF5F8;
+      font-weight: 400;
+    }
+
+    /* Footer */
+    .footer {
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .footer-main {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 4px;
+    }
+
+    .brand-info {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .handle {
+      font-size: 27px;
+      font-weight: 700;
+      color: #6B1737;
+      letter-spacing: -0.01em;
+    }
+
+    .credentials {
+      font-size: 17px;
+      font-weight: 500;
+      color: #6B4454;
+    }
+
+    .cta-pill {
+      background: #FFFFFF;
+      border: 2px solid #C83E72;
+      border-radius: 999px;
+      padding: 12px 24px;
+      text-align: right;
+      box-shadow: 0 6px 16px rgba(200, 62, 114, 0.12);
+    }
+
+    .cta-pill .cta-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #8F224B;
+      display: block;
+    }
+
+    .cta-pill .cta-sub {
+      font-size: 15px;
+      font-weight: 600;
+      color: #C83E72;
+      display: block;
+      margin-top: 2px;
+    }
+
+    .source-bar {
+      border-top: 1px solid rgba(107, 23, 55, 0.16);
+      padding-top: 10px;
+      font-size: 14.5px;
+      line-height: 1.35;
+      color: #6E4A59;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .source-bar strong {
+      color: #5A1230;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="canvas">
+    <div class="frame-accent"></div>
+
+    <!-- Header -->
+    <header class="header">
+      <div class="badges">
+        <span class="badge-onco">OncoUpdates · 01</span>
+        <span class="badge-cat">Salud Ovárica</span>
+      </div>
+      <div class="logo-wrap">
+        <img src="../../assets/logo-cr.png" alt="Logo Dra. Cynthia Reyes" />
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <h1>Síntomas abdominales que <span class="highlight">no debes ignorar</span></h1>
+      <div class="hero-divider"></div>
+      <p>El cáncer de ovario suele dar señales sutiles al inicio que fácilmente se confunden con gastritis o colitis. Reconocerlas a tiempo permite actuar oportunamente.</p>
+    </section>
+
+    <!-- 4 Symptom Cards -->
+    <section class="grid">
+      <article class="card">
+        <div class="card-top">
+          <div class="icon-box">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C83E72" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3"/>
+              <path d="M12 5V2M12 22v-3M5 12H2M22 12h-3"/>
+              <path d="M7.05 7.05 4.93 4.93M19.07 19.07l-2.12-2.12M16.95 7.05l2.12-2.12M4.93 19.07l2.12-2.12"/>
+            </svg>
+          </div>
+          <span class="card-num">01</span>
+        </div>
+        <h2>Inflamación persistente</h2>
+        <p>Distensión abdominal constante que no mejora con cambios habituales en tu alimentación.</p>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <div class="icon-box">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#C83E72" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2a10 10 0 1 0 10 10"/>
+              <path d="M12 6v6l4 2"/>
+              <path d="M18 2v4h4"/>
+            </svg>
+          </div>
+          <span class="card-num">02</span>
+        </div>
+        <h2>Llenura rápida al comer</h2>
+        <p>Sentirte satisfecha tras pocos bocados o notar pérdida del apetito sin una causa clara.</p>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <div class="icon-box">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#C83E72" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 21s-7-4.5-7-10.5A4.5 4.5 0 0 1 12 7a4.5 4.5 0 0 1 7 3.5C19 16.5 12 21 12 21z"/>
+              <path d="M12 11v4"/>
+              <path d="M12 17h.01"/>
+            </svg>
+          </div>
+          <span class="card-num">03</span>
+        </div>
+        <h2>Dolor pélvico o presión</h2>
+        <p>Molestia sorda, pesadez o dolor recurrente en la parte baja del abdomen o la pelvis.</p>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <div class="icon-box">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#C83E72" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+            </svg>
+          </div>
+          <span class="card-num">04</span>
+        </div>
+        <h2>Cambios al orinar</h2>
+        <p>Necesidad más frecuente o urgente de ir al baño sin presentar una infección urinaria.</p>
+      </article>
+    </section>
+
+    <!-- Callout -->
+    <section class="callout">
+      <div class="callout-badge">
+        <span class="big">+2</span>
+        <span class="small">Semanas</span>
+      </div>
+      <div class="callout-text">
+        <h3>¿Cuándo acudir a valoración?</h3>
+        <p>Tener estos síntomas no significa cáncer, pero si son <strong>nuevos y persisten por más de 2 semanas</strong>, solicita una evaluación pélvica y ultrasonido con una especialista.</p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-main">
+        <div class="brand-info">
+          <span class="handle">@dracynthiareyes</span>
+          <span class="credentials">Dra. Cynthia Reyes López · Ginecología Oncológica · WTC CDMX y Consulta Virtual</span>
+        </div>
+        <div class="cta-pill">
+          <span class="cta-title">Agenda tu consulta</span>
+          <span class="cta-sub">Datos de contacto en la bio</span>
+        </div>
+      </div>
+      <div class="source-bar">
+        <span><strong>Fuente:</strong> Guías NCCN de Cáncer de Ovario (2027) y ESMO Essentials in Gynaecological Tumours (2024).</span>
+        <span>Contenido educativo · No sustituye consulta médica</span>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
