@@ -1,0 +1,43 @@
+{
+  "configuracion": {
+    "cuenta_ig": "@dracynthiareyes",
+    "base_url_pages": "https://dracynthiareyes.github.io",
+    "dias_publicacion": ["lunes", "miercoles", "viernes"],
+    "hora_cdmx": "09:17",
+    "zona_horaria": "America/Mexico_City"
+  },
+  "entregas": [
+    {
+      "numero": 1,
+      "slug": "ovario-sintomas",
+      "fecha_programada": null,
+      "categoria_id": 3,
+      "categoria_nombre": "Salud Ovárica",
+      "paleta": "rosa_guinda",
+      "layout": "grid_2x2",
+      "titulo": "Síntomas abdominales que no debes ignorar",
+      "fuente": "Guías NCCN de Cáncer de Ovario (2027) y ESMO Essentials in Gynaecological Tumours (2024).",
+      "imagen_relativa": "onco-updates/piloto-01-ovario-sintomas/oncoupdates-01-ovario-sintomas.png",
+      "caption_relativa": "onco-updates/piloto-01-ovario-sintomas/caption.md",
+      "estado": "piloto",
+      "ig_media_id": null,
+      "publicada_en": null
+    },
+    {
+      "numero": 2,
+      "slug": "papanicolaou-azul",
+      "fecha_programada": null,
+      "categoria_id": 2,
+      "categoria_nombre": "Prevención Cervical",
+      "paleta": "azul_clinico",
+      "layout": "steps_3",
+      "titulo": "¿Qué hacer ante un Papanicolaou anormal?",
+      "fuente": "Atlas de Oncología Ginecológica (UNAM) y ESMO Essentials in Gynaecological Tumours (2024).",
+      "imagen_relativa": "onco-updates/piloto-02-papanicolaou-azul/oncoupdates-02-papanicolaou-azul.png",
+      "caption_relativa": "onco-updates/piloto-02-papanicolaou-azul/caption.md",
+      "estado": "piloto",
+      "ig_media_id": null,
+      "publicada_en": null
+    }
+  ]
+}

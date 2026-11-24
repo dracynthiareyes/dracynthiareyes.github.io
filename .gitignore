@@ -9,6 +9,13 @@ manuales/
 Thumbs.db
 desktop.ini
 
+# Secretos y credenciales locales (NUNCA subir a GitHub)
+.env
+.env.*
+*.pem
+credentials*.json
+token*.json
+
 # Archivos temporales y editores
 *.log
 *.tmp

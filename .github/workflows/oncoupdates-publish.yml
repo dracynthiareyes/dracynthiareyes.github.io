@@ -1,0 +1,57 @@
+name: Publicar OncoUpdates en Instagram
+
+on:
+  schedule:
+    # Lunes, miércoles y viernes a las 09:17 AM hora CDMX (UTC-6 todo el año = 15:17 UTC)
+    # Se usa el minuto :17 para evitar la saturación de GitHub Actions en :00 y :30.
+    - cron: "17 15 * * 1,3,5"
+  workflow_dispatch:
+    inputs:
+      fecha:
+        description: "Fecha YYYY-MM-DD opcional (vacío = hoy en CDMX)"
+        required: false
+      dry_run:
+        description: "Simular sin publicar en Instagram"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Publicar entrega programada
+        env:
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          INPUT_FECHA: ${{ github.event.inputs.fecha }}
+          INPUT_DRY_RUN: ${{ github.event.inputs.dry_run }}
+        run: |
+          ARGS=""
+          if [ -n "$INPUT_FECHA" ]; then
+            ARGS="$ARGS --fecha $INPUT_FECHA"
+          fi
+          if [ "$INPUT_DRY_RUN" = "true" ]; then
+            ARGS="$ARGS --dry-run"
+          fi
+          python3 onco-updates/motor/publicar_ig.py $ARGS
+
+      - name: Guardar actualización de historial.json
+        run: |
+          if ! git diff --quiet onco-updates/historial.json; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add onco-updates/historial.json
+            git commit -m "chore(onco-updates): registrar publicación automática en Instagram"
+            git push
+          fi
