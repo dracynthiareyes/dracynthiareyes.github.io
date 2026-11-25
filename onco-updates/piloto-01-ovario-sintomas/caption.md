@@ -1,13 +1,3 @@
-# OncoUpdates #01 (Piloto) — Texto para Instagram
-
-**Tema:** Síntomas abdominales persistentes y salud ovárica  
-**Pilar:** Cáncer de ovario / Detección oportuna  
-**Fuente clínica:** Guías NCCN de Cáncer de Ovario (2027) y *ESMO Essentials in Gynaecological Tumours* (2024)
-
----
-
-## Caption listo para copiar y pegar
-
 ¿Inflamación abdominal que no se quita? No siempre es "solo colitis". 🩺✨
 
 A diferencia de otros tipos de cáncer, el cáncer de ovario no cuenta con una prueba de tamizaje rutinaria para todas las mujeres, y sus primeras señales suelen ser sutiles. Por eso, conocer tu cuerpo y prestar atención a síntomas persistentes es fundamental.

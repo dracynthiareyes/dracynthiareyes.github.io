@@ -2,7 +2,11 @@
   "configuracion": {
     "cuenta_ig": "@dracynthiareyes",
     "base_url_pages": "https://dracynthiareyes.github.io",
-    "dias_publicacion": ["lunes", "miercoles", "viernes"],
+    "dias_publicacion": [
+      "lunes",
+      "miercoles",
+      "viernes"
+    ],
     "hora_cdmx": "09:17",
     "zona_horaria": "America/Mexico_City"
   },
@@ -10,7 +14,7 @@
     {
       "numero": 1,
       "slug": "ovario-sintomas",
-      "fecha_programada": null,
+      "fecha_programada": "2026-11-25",
       "categoria_id": 3,
       "categoria_nombre": "Salud Ovárica",
       "paleta": "rosa_guinda",
@@ -19,14 +23,14 @@
       "fuente": "Guías NCCN de Cáncer de Ovario (2027) y ESMO Essentials in Gynaecological Tumours (2024).",
       "imagen_relativa": "onco-updates/piloto-01-ovario-sintomas/oncoupdates-01-ovario-sintomas.png",
       "caption_relativa": "onco-updates/piloto-01-ovario-sintomas/caption.md",
-      "estado": "piloto",
+      "estado": "programada",
       "ig_media_id": null,
       "publicada_en": null
     },
     {
       "numero": 2,
       "slug": "papanicolaou-azul",
-      "fecha_programada": null,
+      "fecha_programada": "2026-11-27",
       "categoria_id": 2,
       "categoria_nombre": "Prevención Cervical",
       "paleta": "azul_clinico",
@@ -35,7 +39,23 @@
       "fuente": "Atlas de Oncología Ginecológica (UNAM) y ESMO Essentials in Gynaecological Tumours (2024).",
       "imagen_relativa": "onco-updates/piloto-02-papanicolaou-azul/oncoupdates-02-papanicolaou-azul.png",
       "caption_relativa": "onco-updates/piloto-02-papanicolaou-azul/caption.md",
-      "estado": "piloto",
+      "estado": "programada",
+      "ig_media_id": null,
+      "publicada_en": null
+    },
+    {
+      "numero": 3,
+      "slug": "mama-evaluacion-nodulo",
+      "fecha_programada": "2026-11-30",
+      "categoria_id": 1,
+      "categoria_nombre": "Patología Mamaria",
+      "paleta": "blanco_rosa",
+      "layout": "myth_reality",
+      "titulo": "¿Notaste un bulto o cambio en tu mama?",
+      "fuente": "Guías NCCN de Cáncer de Mama (v3.2025) y Clasificación OMS de Tumores de Mama.",
+      "imagen_relativa": "onco-updates/entregas/03-mama-evaluacion-nodulo/oncoupdates-03-mama-evaluacion-nodulo.png",
+      "caption_relativa": "onco-updates/entregas/03-mama-evaluacion-nodulo/caption.md",
+      "estado": "programada",
       "ig_media_id": null,
       "publicada_en": null
     }

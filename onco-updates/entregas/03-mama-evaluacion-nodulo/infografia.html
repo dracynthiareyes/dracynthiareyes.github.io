@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>OncoUpdates 03 — ¿Notaste un bulto o cambio en tu mama?</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 1080px;
+      height: 1350px;
+      overflow: hidden;
+      font-family: "Avenir Next", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+      background: #FFFFFF;
+      color: #4D0F2B;
+      -webkit-font-smoothing: antialiased;
+    }
+    .canvas {
+      position: relative;
+      width: 1080px;
+      height: 1350px;
+      padding: 46px 58px 42px 58px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: radial-gradient(circle at 90% 10%, rgba(253, 228, 238, 0.75) 0%, rgba(255, 255, 255, 0) 46%),radial-gradient(circle at 10% 90%, rgba(253, 228, 238, 0.55) 0%, rgba(255, 255, 255, 0) 42%),linear-gradient(180deg, #FFFFFF 0%, #FFF9FB 100%);
+    }
+    .frame-accent {
+      position: absolute;
+      inset: 22px;
+      border: 1.5px solid rgba(200, 62, 114, 0.22);
+      border-radius: 28px;
+      pointer-events: none;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 2;
+    }
+    .badges { display: flex; align-items: center; gap: 14px; }
+    .badge-onco {
+      background: linear-gradient(135deg, #4D0F2B 0%, #C83E72 100%);
+      color: #FFFFFF;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      padding: 11px 24px;
+      border-radius: 999px;
+      box-shadow: 0 6px 18px rgba(77, 15, 43, 0.18);
+    }
+    .badge-cat {
+      background: #FDE4EE;
+      border: 1.5px solid rgba(200, 62, 114, 0.25);
+      color: #4D0F2B;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 10px 20px;
+      border-radius: 999px;
+    }
+    .logo-wrap {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      background: #FFFFFF;
+      padding: 4px;
+      box-shadow: 0 8px 24px rgba(77, 15, 43, 0.05);
+      border: 1.5px solid #C99A3B;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .logo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    .hero { z-index: 2; }
+    .hero h1 {
+      font-family: "Georgia", "Palatino", serif;
+      font-size: 52px;
+      line-height: 1.12;
+      font-weight: 700;
+      color: #4D0F2B;
+      letter-spacing: -0.01em;
+    }
+    .hero h1 .highlight { color: #C83E72; font-style: italic; }
+    .hero-divider {
+      width: 88px;
+      height: 4px;
+      background: linear-gradient(90deg, #C83E72 0%, #FDE4EE 100%);
+      border-radius: 4px;
+      margin: 14px 0 12px 0;
+    }
+    .hero p {
+      font-size: 23px;
+      line-height: 1.38;
+      color: #6B3D51;
+      font-weight: 500;
+      max-width: 940px;
+    }
+
+    /* Layout 1: Grid 2x2 */
+    .grid-2x2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      z-index: 2;
+    }
+    .card {
+      background: #FFFFFF;
+      border: 1.5px solid rgba(200, 62, 114, 0.22);
+      border-radius: 24px;
+      padding: 24px 26px;
+      box-shadow: 0 12px 30px rgba(77, 15, 43, 0.05);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .icon-box {
+      width: 52px;
+      height: 52px;
+      border-radius: 15px;
+      background: #FDE4EE;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card-num {
+      font-family: "Georgia", serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: rgba(200, 62, 114, 0.28);
+    }
+    .card h2 { font-size: 24px; font-weight: 700; color: #4D0F2B; line-height: 1.22; }
+    .card p { font-size: 19px; line-height: 1.42; color: #6B3D51; }
+
+    /* Layout 2: 3 Steps */
+    .steps-3 {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      z-index: 2;
+    }
+    .step-card {
+      background: #FFFFFF;
+      border: 1.5px solid rgba(200, 62, 114, 0.22);
+      border-left: 6px solid #C83E72;
+      border-radius: 22px;
+      padding: 22px 28px;
+      box-shadow: 0 10px 26px rgba(77, 15, 43, 0.05);
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .step-badge {
+      flex-shrink: 0;
+      width: 66px;
+      height: 66px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #4D0F2B 0%, #C83E72 100%);
+      color: #FFFFFF;
+      font-family: "Georgia", serif;
+      font-size: 28px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .step-content h2 { font-size: 25px; font-weight: 700; color: #4D0F2B; margin-bottom: 6px; }
+    .step-content p { font-size: 19.5px; line-height: 1.42; color: #6B3D51; }
+
+    /* Layout 3: Myth vs Reality */
+    .myth-reality {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      z-index: 2;
+    }
+    .mr-row {
+      display: grid;
+      grid-template-columns: 1fr 1.25fr;
+      gap: 16px;
+    }
+    .mr-box {
+      border-radius: 20px;
+      padding: 18px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      box-shadow: 0 8px 22px rgba(77, 15, 43, 0.05);
+    }
+    .mr-myth {
+      background: rgba(255, 255, 255, 0.72);
+      border: 1.5px dashed rgba(200, 62, 114, 0.22);
+    }
+    .mr-fact {
+      background: #FFFFFF;
+      border: 1.5px solid #C83E72;
+    }
+    .mr-tag {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #C83E72;
+    }
+    .mr-myth .mr-tag { color: #6B3D51; }
+    .mr-box p { font-size: 18.5px; line-height: 1.38; color: #4D0F2B; font-weight: 500; }
+
+    /* Layout 4: Checklist */
+    .checklist {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      z-index: 2;
+    }
+    .check-item {
+      background: #FFFFFF;
+      border: 1.5px solid rgba(200, 62, 114, 0.22);
+      border-radius: 20px;
+      padding: 18px 24px;
+      box-shadow: 0 8px 22px rgba(77, 15, 43, 0.05);
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+    }
+    .check-icon {
+      flex-shrink: 0;
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      background: #FDE4EE;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+    .check-text h2 { font-size: 22px; font-weight: 700; color: #4D0F2B; margin-bottom: 4px; }
+    .check-text p { font-size: 18.5px; line-height: 1.38; color: #6B3D51; }
+
+    /* Callout */
+    .callout {
+      background: linear-gradient(135deg, #4D0F2B 0%, #7C1D46 100%);
+      border-radius: 22px;
+      padding: 20px 28px;
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      z-index: 2;
+      box-shadow: 0 12px 28px rgba(77, 15, 43, 0.18);
+    }
+    .callout-badge {
+      flex-shrink: 0;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1.5px solid #C99A3B;
+      border-radius: 16px;
+      padding: 12px 18px;
+      text-align: center;
+      min-width: 112px;
+    }
+    .callout-badge .big {
+      display: block;
+      font-family: "Georgia", serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: #FFFFFF;
+      line-height: 1.1;
+    }
+    .callout-badge .small {
+      display: block;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #FDE4EE;
+      margin-top: 3px;
+    }
+    .callout-text h3 { font-size: 21px; font-weight: 700; color: #FFFFFF; margin-bottom: 4px; }
+    .callout-text p { font-size: 18px; line-height: 1.38; color: #FDE4EE; }
+
+    /* Footer */
+    .footer {
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .footer-main {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 4px;
+    }
+    .brand-info { display: flex; flex-direction: column; gap: 3px; }
+    .handle { font-size: 27px; font-weight: 700; color: #4D0F2B; letter-spacing: -0.01em; }
+    .credentials { font-size: 17px; font-weight: 500; color: #6B3D51; }
+    .cta-pill {
+      background: #FDE4EE;
+      border: 2px solid #C83E72;
+      border-radius: 999px;
+      padding: 12px 24px;
+      text-align: right;
+      box-shadow: 0 6px 16px rgba(77, 15, 43, 0.05);
+    }
+    .cta-pill .cta-title { font-size: 18px; font-weight: 700; color: #4D0F2B; display: block; }
+    .cta-pill .cta-sub { font-size: 15px; font-weight: 600; color: #9E2656; display: block; margin-top: 2px; }
+    .source-bar {
+      border-top: 1px solid rgba(77, 15, 43, 0.14);
+      padding-top: 10px;
+      font-size: 14.5px;
+      line-height: 1.35;
+      color: #6B3D51;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+    }
+    .source-bar strong { color: #4D0F2B; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <div class="canvas">
+    <div class="frame-accent"></div>
+
+    <header class="header">
+      <div class="badges">
+        <span class="badge-onco">OncoUpdates · 03</span>
+        <span class="badge-cat">Patología Mamaria</span>
+      </div>
+      <div class="logo-wrap">
+        <img src="../../../assets/logo-cr.png" alt="Logo Dra. Cynthia Reyes" />
+      </div>
+    </header>
+
+    <section class="hero">
+      <h1>¿Notaste un <span class="highlight">bulto o cambio</span> en tu mama?</h1>
+      <div class="hero-divider"></div>
+      <p>La mayoría de los cambios mamarios son benignos, pero toda alteración nueva merece valoración médica oportuna.</p>
+    </section>
+
+    <section class="myth-reality">
+      <article class="mr-row">
+        <div class="mr-box mr-myth">
+          <span class="mr-tag">Mito</span>
+          <p>Si el nódulo no duele, no es necesario revisarlo.</p>
+        </div>
+        <div class="mr-box mr-fact">
+          <span class="mr-tag">Realidad médica</span>
+          <p>Muchas lesiones mamarias iniciales no causan dolor; cualquier bulto nuevo debe valorarse.</p>
+        </div>
+      </article>
+      <article class="mr-row">
+        <div class="mr-box mr-myth">
+          <span class="mr-tag">Mito</span>
+          <p>Si soy joven, un cambio en la mama siempre es normal.</p>
+        </div>
+        <div class="mr-box mr-fact">
+          <span class="mr-tag">Realidad médica</span>
+          <p>Aunque en jóvenes predominan causas benignas, el ultrasonido y la revisión clínica definen el diagnóstico.</p>
+        </div>
+      </article>
+      <article class="mr-row">
+        <div class="mr-box mr-myth">
+          <span class="mr-tag">Mito</span>
+          <p>Si me piden biopsia significa que ya es cáncer.</p>
+        </div>
+        <div class="mr-box mr-fact">
+          <span class="mr-tag">Realidad médica</span>
+          <p>La biopsia es el estudio más preciso para confirmar si una lesión es benigna o requiere tratamiento.</p>
+        </div>
+      </article>
+    </section>
+    
+    <section class="callout">
+      <div class="callout-badge">
+        <span class="big">3</span>
+        <span class="small">pasos</span>
+      </div>
+      <div class="callout-text">
+        <h3>Triada de valoración mamaria</h3>
+        <p>Exploración clínica especializada, imagen dirigida (ultrasonido o mastografía) y biopsia cuando está indicada.</p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-main">
+        <div class="brand-info">
+          <span class="handle">@dracynthiareyes</span>
+          <span class="credentials">Dra. Cynthia Reyes López · Ginecología Oncológica · WTC CDMX y Consulta Virtual</span>
+        </div>
+        <div class="cta-pill">
+          <span class="cta-title">Agenda tu consulta</span>
+          <span class="cta-sub">Datos de contacto en la bio</span>
+        </div>
+      </div>
+      <div class="source-bar">
+        <span><strong>Fuente:</strong> Guías NCCN de Cáncer de Mama (v3.2025) y Clasificación OMS de Tumores de Mama.</span>
+        <span>Contenido educativo · No sustituye consulta médica</span>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

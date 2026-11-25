@@ -1,13 +1,3 @@
-# OncoUpdates #02 (Piloto) — Texto para Instagram
-
-**Tema:** ¿Qué hacer ante un Papanicolaou anormal?  
-**Pilar:** Cáncer cervicouterino / Prevención y colposcopia  
-**Fuente clínica:** *Atlas de Oncología Ginecológica* (UNAM) y *ESMO Essentials in Gynaecological Tumours* (2024)
-
----
-
-## Caption listo para copiar y pegar
-
 ¿Recibiste un Papanicolaou alterado y no sabes qué sigue? Respira tranquila. 🩺💙
 
 Un resultado anormal en la citología **no significa automáticamente cáncer**. En la gran mayoría de los casos señala inflamación, infecciones frecuentes o lesiones premalignas que pueden tratarse a tiempo de forma sencilla y efectiva.
