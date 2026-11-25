@@ -71,6 +71,31 @@ def renderizar_png(html_path: Path, png_path: Path) -> None:
         raise RuntimeError(f"Error al renderizar PNG: {res.stderr or res.stdout}")
 
 
+def convertir_a_jpg(png_path: Path, jpg_path: Path) -> None:
+    """Convierte el PNG renderizado a JPEG (formato requerido por Instagram Graph API)."""
+    if Path("/usr/bin/sips").exists():
+        cmd = [
+            "/usr/bin/sips",
+            "-s", "format", "jpeg",
+            "-s", "formatOptions", "95",
+            str(png_path),
+            "--out", str(jpg_path),
+        ]
+        res = subprocess.run(cmd, capture_output=True, text=True)
+        if res.returncode != 0 or not jpg_path.exists():
+            raise RuntimeError(f"Error al convertir PNG a JPG con sips: {res.stderr or res.stdout}")
+        return
+    try:
+        from PIL import Image  # type: ignore
+
+        with Image.open(png_path) as img:
+            img.convert("RGB").save(jpg_path, "JPEG", quality=95, optimize=True)
+    except ImportError as exc:
+        raise RuntimeError(
+            "No se encontró sips ni Pillow para convertir PNG a JPEG (requerido por Instagram Graph API)."
+        ) from exc
+
+
 def procesar_entrega(spec: dict, historial: dict, sin_render: bool = False) -> dict:
     entregas = historial["entregas"]
     ultima = entregas[-1] if entregas else None
@@ -106,6 +131,7 @@ def procesar_entrega(spec: dict, historial: dict, sin_render: bool = False) -> d
 
     html_path = carpeta / "infografia.html"
     png_path = carpeta / f"oncoupdates-{numero:02d}-{slug}.png"
+    jpg_path = carpeta / f"oncoupdates-{numero:02d}-{slug}.jpg"
     caption_path = carpeta / "caption.md"
 
     html_path.write_text(generar_html(datos_render), encoding="utf-8")
@@ -113,6 +139,7 @@ def procesar_entrega(spec: dict, historial: dict, sin_render: bool = False) -> d
 
     if not sin_render:
         renderizar_png(html_path, png_path)
+        convertir_a_jpg(png_path, jpg_path)
 
     registro = {
         "numero": numero,
@@ -124,7 +151,7 @@ def procesar_entrega(spec: dict, historial: dict, sin_render: bool = False) -> d
         "layout": layout,
         "titulo": spec["titulo"],
         "fuente": spec["fuente"],
-        "imagen_relativa": str(png_path.relative_to(REPO_ROOT)),
+        "imagen_relativa": str(jpg_path.relative_to(REPO_ROOT)),
         "caption_relativa": str(caption_path.relative_to(REPO_ROOT)),
         "estado": "programada" if spec.get("fecha_programada") else "borrador",
         "ig_media_id": None,
