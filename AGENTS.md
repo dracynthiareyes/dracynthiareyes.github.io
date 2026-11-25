@@ -14,7 +14,8 @@ Instrucciones y contexto operativo para agentes de IA que trabajen en este repos
   - `index.html` — Sitio web oficial y fuente de verdad de colores, credenciales y datos de contacto.
   - `data/tarjetas.json` — Resumen curado de temas oncológicos ginecológicos con sus fuentes clínicas exactas (sí está en GitHub).
   - `assets/logo-cr.png` — Monograma oficial (usado en las infografías).
-  - `onco-updates/` — Plantillas, pilotos y futuras entregas de la serie **OncoUpdates**.
+  - `onco-updates/` — Motor (`motor/`), `historial.json`, pilotos (`piloto-01-*`, `piloto-02-*`) y entregas (`entregas/`) de la serie **OncoUpdates**.
+  - `.github/workflows/oncoupdates-publish.yml` — Workflow de GitHub Actions para publicación automática en Instagram (`IG_USER_ID` e `IG_ACCESS_TOKEN` en GitHub Secrets).
   - `docs/` y `manuales/` — **Carpetas locales excluidas en `.gitignore`** (NO subir a GitHub). Contienen constancias/CV (`docs/`) y guías clínicas PDF como NCCN 2025–2027, ESMO 2024, OMS y Atlas UNAM (`manuales/`).
 
 ---
@@ -26,8 +27,8 @@ Instrucciones y contexto operativo para agentes de IA que trabajen en este repos
 - **No** usar "Onco Tips" ni variantes.
 
 ### Frecuencia y rotación
-- **Cadencia:** 3 publicaciones por semana (días y horario por confirmar al activar la automatización).
-- **Rotación de temas:** Llevar control en `onco-updates/historial.json` (por crear al activar la automatización) para rotar sin repetir entre:
+- **Cadencia:** 3 publicaciones por semana (**lunes, miércoles y viernes a las 09:17 AM hora CDMX**, `America/Mexico_City`, ejecutado vía GitHub Actions en `17 15 * * 1,3,5`).
+- **Rotación de temas:** Llevar control en `onco-updates/historial.json` (ya activo; usar `onco-updates/motor/generar.py` para nuevas entregas) para rotar sin repetir entre:
   1. Patología mamaria (NCCN Mama / OMS)
   2. Cérvix, VPH y colposcopia (ESMO 2024 / Atlas UNAM)
   3. Cáncer de ovario y señales de alerta (NCCN Ovario / ESMO 2024)
